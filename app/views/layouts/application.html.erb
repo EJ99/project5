@@ -9,9 +9,30 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Slabo+27px|Source+Sans+Pro|Space+Mono" rel="stylesheet">  </head>
 
   <body>
+
+  <nav>
+    <div class="nav-wrapper grey">
+      <a href="#!" class="brand-logo center">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#colour">Colour</a></li>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#icons">Icons</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
     <%= yield %>
 
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
-    
+
   </body>
 </html>

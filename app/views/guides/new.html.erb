@@ -1,4 +1,4 @@
-<form action="/guides" method="post">
+<form action="/guides" method="post" class="col 5">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <!-- SECTION 1 -->
@@ -6,13 +6,13 @@
   <div class="section" id="section1">
 
     <label for="">Title</label>
-    <input name="title" type="text">
-
-    <label for="description">Description</label>
-    <input name="description" type="text">
+    <input class="title" name="title" type="text">
 
     <label for="author">Author</label>
-    <input name="author" type="text">
+    <input class="author" name="author" type="text">
+
+    <label for="description">Description</label>
+    <input class="description" name="description" type="text">
 
   </div>
 
@@ -20,28 +20,30 @@
   <!-- SECTION 2 -->
 
 <!-- COLOUR ONE -->
+  <hr>
 
   <div class="section" id="section2">
 
-    <div class="picker">
+    <div class="picker" class="col 5">
       <div class="line">
         <div class="circle"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX">HEX</label>
-        <input name="colour1" class="colourValueHEX" value="#43d614">
+        <label for="colourValueHEX"></label>
+        <input name="colour1" class="colourValueHEX" value="">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
       </div>
     </div>
 
 
+
   <!-- COLOUR TWO -->
 
-    <div class="picker">
+    <div class="picker ">
       <div class="line">
         <div class="circle"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX">HEX</label>
+        <label for="colourValueHEX"></label>
         <input name="colour2" class="colourValueHEX" value="#43d614">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
@@ -56,7 +58,7 @@
       <div class="line">
         <div class="circle"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX">HEX</label>
+        <label for="colourValueHEX"></label>
         <input name="colour3" class="colourValueHEX" value="#43d614">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
@@ -70,7 +72,7 @@
       <div class="line">
         <div class="circle"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX">HEX</label>
+        <label for="colourValueHEX"></label>
         <input name="colour4" class="colourValueHEX" value="#43d614">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
@@ -81,13 +83,11 @@
 
 
 
-
   <!-- SECTION 3 -->
-
-  <div class="section" id="section3">
+  <div class="section" id="section3" class="col 12">
 
     <label for="font1">Header Font</label>
-    <select name="font1">
+    <select id="font1" name="font1">
       <option name="Roboto" value="Roboto">Roboto</option>
       <option name="Space Mono" value="Space Mono">Space Mono</option>
       <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
@@ -95,14 +95,23 @@
     </select>
 
     <label for="font2">Paragaph Font</label>
-    <select name="font2">
+    <select id="font2" name="font2">
       <option name="Roboto" value="Roboto">Roboto</option>
       <option name="Space Mono" value="Space Mono">Space Mono</option>
       <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
       <option name="Raleway" value="Raleway">Raleway</option>
     </select>
+
+    <div class="fontPreview">
+      <h1 class="header">hello</h1>
+      <p class="paragraph">my name is</p>
+    </div>
   </div>
 
+
+
+
+  <hr>
 
   <button>create</button>
 </form>
