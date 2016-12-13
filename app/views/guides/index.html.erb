@@ -1,1 +1,12 @@
-<p>hello world</p>
+<h1>guides</h1>
+
+<a href="/guides/new">Create New Guide</a>
+
+<% @guides.each do |guide| %>
+  <p><a href="/guides/<%= guide['id']%>/show">Title: <%= guide.title %></a></p>
+  <p>Description: <%= guide.description %></p>
+  <p>Color: <%= guide.colour1 %></p>
+  <p>Font: <%= guide.font1 %></p>
+  <hr>
+
+<% end %>

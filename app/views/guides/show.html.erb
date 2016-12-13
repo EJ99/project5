@@ -1,13 +1,13 @@
-<form action="/success" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<div class="">
 
-  <label for="">Title</label>
-  <input name="title" type="text">
+  <h2>Style Guide: <%= @guide.title %></h2>
+  <p>Description: <%= @guide.description %></p>
+  <p>Created by: <%= @guide.author %></p>
+  <p>Color: <%= @guide.colour1 %></p>
+  <p>Font: <%= @guide.font1 %></p>
 
-  <label for="">Description</label>
-  <input name="description" type="text">
+  <p style="font-family: '<%= @guide.font1 =%>';">The quick brown fox...</p>
 
-  
 
-  <button>Send</button>
-</form>
+
+</div>

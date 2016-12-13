@@ -1,20 +1,43 @@
-<form action="/show" method="post">
+<form action="/guides" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label for="">Title</label>
-  <input name="title" type="text">
+  <!-- SECTION 1 -->
 
-  <label for="description">Description</label>
-  <input name="description" type="text">
+  <div class="section" id="section1">
 
-  <label for="author">Author</label>
-  <input name="author" type="text">
+    <label for="">Title</label>
+    <input name="title" type="text">
 
-  <label for="color1">Color1</label>
-  <input name="color1" type="text">
+    <label for="description">Description</label>
+    <input name="description" type="text">
 
-  <label for="font1">Font1</label>
-  <input name="font1" type="text">
+    <label for="author">Author</label>
+    <input name="author" type="text">
+
+  </div>
+
+
+  <!-- SECTION 2 -->
+
+  <div class="section" id="section2">
+
+    <label for="color1">Color1</label>
+    <input name="color1" type="text">
+
+  </div>
+
+  <!-- SECTION 3 -->
+
+  <div class="section" id="section3">
+
+    <select name="font1">
+      <option name="Roboto" value="Roboto">Roboto</option>
+      <option name="Space Mono" value="Space Mono">Space Mono</option>
+      <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
+      <option name="Raleway" value="Raleway">Raleway</option>
+    </select>
+  </div>
+
 
   <button>create</button>
 </form>

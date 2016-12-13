@@ -2,7 +2,6 @@ class GuidesController < ApplicationController
 
   def index
     @guides = Guide.all
-    # render :index
   end
 
   def new
@@ -10,28 +9,29 @@ class GuidesController < ApplicationController
     @guide.title = ""
     @guide.description = ""
     @guide.url = ""
-    @guide.author = ""  #haven't created column for this yet
+    @guide.author = ""
     @guide.colour1 =
     @guide.font1 = ""
 
   end
 
   def create
-    guide = Card.new
-    guide.title = params[:title]
-    guide.description = params[:description]
-    guide.url =
-    guide.sender = params[:sender]
+    @guide = Guide.new
+    @guide.title = params[:title]
+    @guide.description = params[:description]
+    @guide.author = params[:author]
+    @guide.colour1 = params[:color1]
+    @guide.font1 = params[:font1]
 
-    if guide.save
-      redirect_to '/'
+    if @guide.save
+      render :show
     else
-      render :new # just showing the template
+      render :new
     end
   end
 
   def show
-    @guide = Guide.find_by(id: params[:id])
+    @guide = Guide.find(params[:id])
   end
 
   def success

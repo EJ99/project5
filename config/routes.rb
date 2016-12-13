@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get '/guides', to: 'guides#index'
 
   # Start making a new card
-  get '/guide/new', to: 'guide#new'
-  post '/guide/create', to: 'guide#create'
+  get '/guides/new', to: 'guides#new'
+  post '/guides', to: 'guides#create'
   # get '/success/:id', to: 'cards#success'
 
   #show card
-  get '/cards/:id/show', to: 'cards#show'
-
+  get '/guides/:id/show', to: 'guides#show'
+  
 end
