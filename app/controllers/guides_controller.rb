@@ -10,8 +10,12 @@ class GuidesController < ApplicationController
     @guide.description = ""
     @guide.url = ""
     @guide.author = ""
-    @guide.colour1 =
+    @guide.colour1 = ""
+    @guide.colour2 = ""
+    @guide.colour3 = ""
+    @guide.colour4 = ""
     @guide.font1 = ""
+    @guide.font2 = ""
 
   end
 
@@ -20,8 +24,12 @@ class GuidesController < ApplicationController
     @guide.title = params[:title]
     @guide.description = params[:description]
     @guide.author = params[:author]
-    @guide.colour1 = params[:color1]
+    @guide.colour1 = params[:colour1]
+    @guide.colour2 = params[:colour2]
+    @guide.colour3 = params[:colour3]
+    @guide.colour4 = params[:colour4]
     @guide.font1 = params[:font1]
+    @guide.font2 = params[:font2]
 
     if @guide.save
       render :show

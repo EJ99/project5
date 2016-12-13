@@ -3,11 +3,19 @@
   <h2>Style Guide: <%= @guide.title %></h2>
   <p>Description: <%= @guide.description %></p>
   <p>Created by: <%= @guide.author %></p>
-  <p>Color: <%= @guide.colour1 %></p>
-  <p>Font: <%= @guide.font1 %></p>
+  <p>Colour: <%= @guide.colour1 %></p>
+  <p>Colour: <%= @guide.colour2 %></p>
+  <p>Colour: <%= @guide.colour3 %></p>
+  <p>Colour: <%= @guide.colour4 %></p>
+  <p>Heading Font: <%= @guide.font1 %></p>
+  <p>Paragraph Font: <%= @guide.font2 %></p>
 
-  <p style="font-family: '<%= @guide.font1 =%>';">The quick brown fox...</p>
+  <h1 style="font-family: '<%= @guide.font1 =%>';">Heading 1</h1>
+  <h2 style="font-family: '<%= @guide.font1 =%>';">Heading 2</h2>
+  <h3 style="font-family: '<%= @guide.font1 =%>';">Heading 3</h3>
+  <h4 style="font-family: '<%= @guide.font1 =%>';">Heading 4</h4>
 
+  <p style="font-family: '<%= @guide.font2 =%>';">The quick brown fox...</p>
 
 
 </div>

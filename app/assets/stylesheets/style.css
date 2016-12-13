@@ -2,3 +2,28 @@
   display:block;
   margin:20px;
 }
+
+.circle{
+  background-color: lightgray;
+  height: 100px;
+  width:100px;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+.circleWrapper{
+  width:400px;
+}
+
+.fontWrapper{
+  clear:both;
+}
+
+body{
+  font-family: roboto;
+}
+
+
+.picker{
+  margin:5%;
+}
