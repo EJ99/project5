@@ -10,7 +10,10 @@ class GuidesController < ApplicationController
     @guide.title = ""
     @guide.description = ""
     @guide.url = ""
-    @guide.sender = ""  #haven't created column for this yet
+    @guide.author = ""  #haven't created column for this yet
+    @guide.colour1 =
+    @guide.font1 = ""
+
   end
 
   def create

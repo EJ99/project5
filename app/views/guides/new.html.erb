@@ -1,0 +1,20 @@
+<form action="/show" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="">Title</label>
+  <input name="title" type="text">
+
+  <label for="description">Description</label>
+  <input name="description" type="text">
+
+  <label for="author">Author</label>
+  <input name="author" type="text">
+
+  <label for="color1">Color1</label>
+  <input name="color1" type="text">
+
+  <label for="font1">Font1</label>
+  <input name="font1" type="text">
+
+  <button>create</button>
+</form>
