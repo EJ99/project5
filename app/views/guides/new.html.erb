@@ -38,15 +38,17 @@
   <hr>
 
   <h2>Colour palette</h2>
+  <button id="getPalette">generate palette</button>
 
   <div class="section" id="section2">
 
+
     <div class="picker" class="col 5">
       <div class="line">
-        <div class="circle"></div>
+        <div class="circle" id="circle1"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
-        <input name="colour1" class="colourValueHEX" value="">
+        <input name="colour1" class="colourValueHEX" id="colourValueHEX1" value="">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
       </div>
@@ -59,10 +61,10 @@
 
     <div class="picker ">
       <div class="line">
-        <div class="circle"></div>
+        <div class="circle" id="circle2"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
-        <input name="colour2" class="colourValueHEX" value="#43d614">
+        <input name="colour2" class="colourValueHEX" id="colourValueHEX2" value="#43d614">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
       </div>
@@ -74,10 +76,10 @@
 
     <div class="picker">
       <div class="line">
-        <div class="circle"></div>
+        <div class="circle" id="circle3"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
-        <input name="colour3" class="colourValueHEX" value="#43d614">
+        <input name="colour3" class="colourValueHEX" id="colourValueHEX3" value="#43d614">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
       </div>
@@ -88,10 +90,10 @@
 
     <div class="picker">
       <div class="line">
-        <div class="circle"></div>
+        <div class="circle" id="circle4"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
-        <input name="colour4" class="colourValueHEX" value="#43d614">
+        <input name="colour4" class="colourValueHEX" id="colourValueHEX4" value="#43d614">
         <!-- HEX Trigger -->
         <button class="getColour">Generate Random</button>
       </div>
@@ -113,6 +115,15 @@
           <option name="Space Mono" value="Space Mono">Space Mono</option>
           <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
           <option name="Raleway" value="Raleway">Raleway</option>
+          <option name="Montserrat" value="Montserrat">Montserrat</option>
+          <option name="Lora" value="Lora">Lora</option>
+          <option name="Bitter" value="Bitter">Bitter</option>
+          <option name="Inconsolata" value="Inconsolata">Inconsolata</option>
+          <option name="Anton" value="Anton">Anton</option>
+          <option name="Lobster" value="Lobster">Lobster</option>
+          <option name="Noto Serif" value="Noto Serif">Noto Serif</option>
+          <option name="Playfair Display" value="Playfair Display">Playfair Display</option>
+
         </select>
     </div>
 
@@ -123,6 +134,14 @@
         <option name="Space Mono" value="Space Mono">Space Mono</option>
         <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
         <option name="Raleway" value="Raleway">Raleway</option>
+        <option name="Montserrat" value="Montserrat">Montserrat</option>
+        <option name="Lora" value="Lora">Lora</option>
+        <option name="Bitter" value="Bitter">Bitter</option>
+        <option name="Inconsolata" value="Inconsolata">Inconsolata</option>
+        <option name="Anton" value="Anton">Anton</option>
+        <option name="Lobster" value="Lobster">Lobster</option>
+        <option name="Noto Serif" value="Noto Serif">Noto Serif</option>
+        <option name="Playfair Display" value="Playfair Display">Playfair Display</option>
       </select>
 
       <div class="fontPreview">
@@ -133,9 +152,9 @@
         <p>This text will be used in the guide</p>
       </div>
 
-      <button>hipster ipsum</button>
-      <button>lorem ipsum</button>
-      <button>samuel ipsum</button>
+      <button id="hipster" class="ipsum">hipster ipsum</button>
+      <button id="lorem" class="ipsum">lorem ipsum</button>
+      <button id="samuel" class="ipsum">samuel ipsum</button>
   </div>
 
 

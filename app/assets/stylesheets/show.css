@@ -1,10 +1,36 @@
 .container{
   display:block;
   margin:auto;
-  width:60%;
+  width:100%;
   margin:12%;
 }
 
 .gray{
-  color:gray;
+  /*color:gray;*/
+}
+
+.colourShow{
+  width:100%;
+}
+
+.strip{
+  height:100vh;
+  display:inline-block;
+  margin:0;
+}
+
+#strip1{
+  width:30%
+}
+
+#strip2{
+  width:20%
+}
+
+#strip3{
+  width:10%
+}
+
+#strip4{
+  width:10%
 }

@@ -9,6 +9,26 @@ function getRandomColour() {
 
 $(document).ready(function() {
 
+  //COLOUR PALETTE
+  $("#getPalette").on('click', function(event) {
+    console.log('hello')
+    event.preventDefault();
+    var colour1 = getRandomColour();
+    var colour2 = getRandomColour();
+    var colour3 = getRandomColour();
+    var colour4 = getRandomColour();
+    $('#colourValueHEX1').val(colour1);
+    $('#circle1').css({'background-color': colour1});
+    $('#colourValueHEX2').val(colour1);
+    $('#circle2').css({'background-color': colour2});
+    $('#colourValueHEX3').val(colour1);
+    $('#circle3').css({'background-color': colour3});
+    $('#colourValueHEX3').val(colour1);
+    $('#circle4').css({'background-color': colour3});
+  });
+
+  //GENERATE INDIVIDUAL COLOURS
+
   $(".getColour").on('click', function(event) {
     console.log('hello')
     event.preventDefault();
@@ -26,6 +46,28 @@ $(document).ready(function() {
      $circle.css({'background-color': $(this).val()});
   });
 
+  //LOREM, IPSUM, SAMUEL
+
+  $("#hipster").on("click", function(event) {
+      event.preventDefault();
+      var hipster = "Cold-pressed post-ironic fam, flexitarian ugh pork belly sartorial truffaut. +1 XOXO portland mixtape meggings, keffiyeh tote bag. Swag cold-pressed health goth tattooed, street art vexillologist semiotics fingerstache taxidermy disrupt kale chips succulents coloring book. Iceland edison bulb vegan man braid vinyl viral. Subway tile chicharrones humblebrag flexitarian. Vice lumbersexual pug, enamel pin quinoa pabst four loko mixtape hashtag. Tote bag flexitarian photo booth irony cardigan, everyday carry hexagon thundercats readymade XOXO portland mixtape."
+      $(".test2").val(hipster);
+      $('.paragraph').text(hipster);
+  });
+
+  $("#lorem").on("click", function(event) {
+      event.preventDefault();
+      var lorem = "Ut id orci non elit congue sodales. Nullam eu felis at lacus ultricies accumsan. In eu magna nec felis tempor suscipit in consequat ex. Donec iaculis nunc diam, in consequat elit sagittis ut. In lobortis pellentesque velit non accumsan. Integer vel elit at orci dignissim ultricies. Nunc sed aliquet massa. Proin maximus, velit vulputate malesuada posuere, ligula odio consectetur libero, vitae elementum libero leo ut justo. Nunc in vestibulum eros, in pretium quam. Pellentesque vitae semper turpis. Ut massa augue, sollicitudin nec mi nec, facilisis accumsan enim. Donec pretium faucibus eros, quis gravida odio molestie in. Nulla facilisi. Cras gravida orci ut elit porta, eget tincidunt massa efficitur."
+      $(".test2").val(lorem);
+      $('.paragraph').text(lorem);
+  });
+
+  $("#samuel").on("click", function(event) {
+      event.preventDefault();
+      var samuel = "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb."
+      $(".test2").val(samuel);
+      $('.paragraph').text(samuel);
+  });
 
   //DYNAMICALLY CHANGE TEXT
   $(".test1").on("change paste keyup", function() {
@@ -38,11 +80,6 @@ $(document).ready(function() {
     $('.paragraph').text($(this).val());
   });
 
-  //   $('#myselect1').change(function(){
-  //     if($(this).val() == 'volvo'){ // or this.value == 'volvo'
-  //     $('#myselectVolvo option:lt(2)').remove();
-  //   }
-  // });
 
   $('#font1').change(function(){
       var selected = $('#font1 :selected').text();
@@ -55,6 +92,8 @@ $(document).ready(function() {
       console.log(selected)
       $('.paragraph').css({'font-family': selected });
   });
+
+
 
 
 

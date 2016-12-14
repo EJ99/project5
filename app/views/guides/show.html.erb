@@ -1,5 +1,6 @@
 <div class="container">
 
+
   <div class="introShow">
     <h2><span class="gray">Style Guide:</span> <%= @guide.title %></h2>
     <img src="" alt="logo">
@@ -9,15 +10,19 @@
     <p><span class="gray">Trello:</span> <%= @guide.trello %></p>
   </div>
 
-  <div class="colourShow">
-    <p><span class="gray">Colour:</span> <%= @guide.colour1 %></p>
+  <div class="fontShow">
+    <p style="color:<%= @guide.colour1 %>;"><span class="gray">Colour:</span> <%= @guide.colour1 %></p>
     <p><span class="gray">Colour:</span> <%= @guide.colour2 %></p>
     <p><span class="gray">Colour:</span> <%= @guide.colour3 %></p>
     <p><span class="gray">Colour:</span> <%= @guide.colour4 %></p>
   </div>
 
+  <div class="colourShow">
+    <div class="strip" id="strip1" style="background-color:<%= @guide.colour1 %>;"></div><div class="strip" id="strip2" style="background-color:<%= @guide.colour2 %>;"></div><div class="strip" id="strip3" style="background-color:<%= @guide.colour3 %>;"></div><div class="strip" id="strip4" style="background-color:<%= @guide.colour4 %>;"></div>
+  </div>
+
   <div class="fontShow">
-    <p><span class="gray">Heading Font:</span> <%= @guide.font1 %></p>
+    <p> <span class="gray">Heading Font:</span> <%= @guide.font1 %></p>
     <p><span class="gray">Paragraph Font:</span> <%= @guide.font2 %></p>
     <h1 style="font-family: '<%= @guide.font1 =%>';">Heading 1</h1>
     <h2 style="font-family: '<%= @guide.font1 =%>';">Heading 2</h2>
