@@ -129,7 +129,8 @@ body {
 
 #section2{
   width:100%;
-  padding:10% 1%;
+  padding:2% 5%;
+  padding-bottom: 200px;
 }
 
 /*FONT SECTION*/
@@ -166,6 +167,6 @@ body {
 
 #section3{
   clear:both;
-  padding:10% 1%;
+  padding:2% 1%;
   background-color: #ededed;
 }

@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   #show card
   get '/guides/:id/show', to: 'guides#show'
+  get '/guides/:id/send', to: 'guides#send_card'
 
 end

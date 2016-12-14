@@ -16,6 +16,12 @@ class GuidesController < ApplicationController
     @guide.colour4 = ""
     @guide.font1 = ""
     @guide.font2 = ""
+    @guide.logo = ""
+    @guide.github = ""
+    @guide.trello = ""
+    @guide.icon = ""
+    @guide.recipient_email = ""
+    @guide.recipient_name = ""
 
   end
 
@@ -30,8 +36,14 @@ class GuidesController < ApplicationController
     @guide.colour4 = params[:colour4]
     @guide.font1 = params[:font1]
     @guide.font2 = params[:font2]
+    @guide.github = params[:github]
+    @guide.trello = params[:trello]
+    @guide.icon = params[:icon]
+    @guide.recipient_email = params[:recipient_email]
+    @guide.recipient_name = params[:recipient_name]
 
     if @guide.save
+      GuideMailer.send_guide(@guide).deliver
       render :show
     else
       render :new
@@ -41,6 +53,7 @@ class GuidesController < ApplicationController
   def show
     @guide = Guide.find(params[:id])
   end
+
 
   def success
     render :success
