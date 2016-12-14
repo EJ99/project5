@@ -1,23 +1,45 @@
-<div class="">
-  <div class="container">
+<div class="container">
 
-  <h2>Style Guide: <%= @guide.title %></h2>
-  <p>Description: <%= @guide.description %></p>
-  <p>Created by: <%= @guide.author %></p>
-  <p>Colour: <%= @guide.colour1 %></p>
-  <p>Colour: <%= @guide.colour2 %></p>
-  <p>Colour: <%= @guide.colour3 %></p>
-  <p>Colour: <%= @guide.colour4 %></p>
-  <p>Heading Font: <%= @guide.font1 %></p>
-  <p>Paragraph Font: <%= @guide.font2 %></p>
+  <div class="introShow">
+    <h2>Style Guide: <%= @guide.title %></h2>
+    <img src="" alt="logo">
+    <p>Description: <%= @guide.description %></p>
+    <p>Created by: <%= @guide.author %></p>
+    <p>Github: <%= @guide.github %></p>
+    <p>Trello: <%= @guide.trello %></p>
+  </div>
 
-  <h1 style="font-family: '<%= @guide.font1 =%>';">Heading 1</h1>
-  <h2 style="font-family: '<%= @guide.font1 =%>';">Heading 2</h2>
-  <h3 style="font-family: '<%= @guide.font1 =%>';">Heading 3</h3>
-  <h4 style="font-family: '<%= @guide.font1 =%>';">Heading 4</h4>
+  <div class="colourShow">
+    <p>Colour: <%= @guide.colour1 %></p>
+    <p>Colour: <%= @guide.colour2 %></p>
+    <p>Colour: <%= @guide.colour3 %></p>
+    <p>Colour: <%= @guide.colour4 %></p>
+  </div>
 
-  <p style="font-family: '<%= @guide.font2 =%>';">The quick brown fox...</p>
+  <div class="fontShow">
+    <p>Heading Font: <%= @guide.font1 %></p>
+    <p>Paragraph Font: <%= @guide.font2 %></p>
+    <h1 style="font-family: '<%= @guide.font1 =%>';">Heading 1</h1>
+    <h2 style="font-family: '<%= @guide.font1 =%>';">Heading 2</h2>
+    <h3 style="font-family: '<%= @guide.font1 =%>';">Heading 3</h3>
+    <h4 style="font-family: '<%= @guide.font1 =%>';">Heading 4</h4>
+    <p style="font-family: '<%= @guide.font2 =%>';">The quick brown fox...</p>
+  </div>
 
-</div>
+  <div class="iconShow">
+    <p>Heading Font: <%= @guide.font1 %></p>
+    <p>Paragraph Font: <%= @guide.font2 %></p>
+    <h1 style="font-family: '<%= @guide.font1 =%>';">Heading 1</h1>
+    <h2 style="font-family: '<%= @guide.font1 =%>';">Heading 2</h2>
+    <h3 style="font-family: '<%= @guide.font1 =%>';">Heading 3</h3>
+    <h4 style="font-family: '<%= @guide.font1 =%>';">Heading 4</h4>
+    <p style="font-family: '<%= @guide.font2 =%>';">The quick brown fox...</p>
+  </div>
+
+
+
+
+
+
 
 </div>

@@ -1,26 +1,43 @@
 <form action="/guides" method="post" class="col 5">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <!-- SECTION 1 -->
+  <!-- SECTION 1A -->
 
   <div class="section" id="section1">
 
-    <label for="">Title</label>
-    <input class="title" name="title" type="text">
+    <h2>Project</h2>
 
-    <label for="author">Author</label>
-    <input class="author" name="author" type="text">
+    <div class="start">
+      <label for="">Title</label>
+      <input class="title" name="title" type="text">
 
-    <label for="description">Description</label>
-    <input class="description" name="description" type="text">
+      <label for="description">Description</label>
+      <input class="description" name="description" type="text">
+
+      <label for="author">Author</label>
+      <input class="author" name="author" type="text">
+    </div>
+
+  </div>
+
+  <!-- SECTION 1A -->
+
+  <div class="section" id="section1b">
+
+    <h2>Logo</h2>
+
+      <label for="file">Upload an image</label>
+      <input class="file" name="file" type="file">
 
   </div>
 
 
   <!-- SECTION 2 -->
+  <!-- COLOUR ONE -->
 
-<!-- COLOUR ONE -->
   <hr>
+
+  <h2>Colour palette</h2>
 
   <div class="section" id="section2">
 
@@ -38,6 +55,7 @@
 
 
   <!-- COLOUR TWO -->
+
 
     <div class="picker ">
       <div class="line">
@@ -86,30 +104,67 @@
   <!-- SECTION 3 -->
   <div class="section" id="section3" class="col 12">
 
-    <label for="font1">Header Font</label>
-    <select id="font1" name="font1">
-      <option name="Roboto" value="Roboto">Roboto</option>
-      <option name="Space Mono" value="Space Mono">Space Mono</option>
-      <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
-      <option name="Raleway" value="Raleway">Raleway</option>
-    </select>
+    <h2>Typography</h2>
 
-    <label for="font2">Paragaph Font</label>
-    <select id="font2" name="font2">
-      <option name="Roboto" value="Roboto">Roboto</option>
-      <option name="Space Mono" value="Space Mono">Space Mono</option>
-      <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
-      <option name="Raleway" value="Raleway">Raleway</option>
-    </select>
-
-    <div class="fontPreview">
-      <h1 class="header">hello</h1>
-      <p class="paragraph">my name is</p>
+    <div class="styled-select">
+        <label for="font1">Header Font</label>
+        <select id="font1" name="font1">
+          <option name="Roboto" value="Roboto">Roboto</option>
+          <option name="Space Mono" value="Space Mono">Space Mono</option>
+          <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
+          <option name="Raleway" value="Raleway">Raleway</option>
+        </select>
     </div>
+
+
+      <label for="font2">Paragaph Font</label>
+      <select id="font2" name="font2">
+        <option name="Roboto" value="Roboto">Roboto</option>
+        <option name="Space Mono" value="Space Mono">Space Mono</option>
+        <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
+        <option name="Raleway" value="Raleway">Raleway</option>
+      </select>
+
+      <div class="fontPreview">
+        <h1 class="header">hello</h1>
+        <input type="text" class="test1" name="" value="">
+        <p class="paragraph">my name is</p>
+        <textarea name="name" rows="8" cols="80" class="test2 "></textarea>
+        <p>This text will be used in the guide</p>
+      </div>
+
+      <button>hipster ipsum</button>
+      <button>lorem ipsum</button>
+      <button>samuel ipsum</button>
   </div>
 
 
+  <!-- SECTION 4 -->
 
+  <hr>
+
+  <div class="section" id="section4">
+
+    <h2>Icons</h2>
+
+  </div>
+
+
+  <!-- SECTION 5 -->
+
+  <hr>
+
+  <div class="section" id="section5">
+
+    <h2>References</h2>
+
+      <label for="trello">Trello</label>
+      <input class="trello" name="trello" type="text">
+
+      <label for="github">Github</label>
+      <input class="github" name="githib" type="text">
+
+  </div>
 
   <hr>
 

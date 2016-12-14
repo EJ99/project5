@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # Home page
   #list all guides
-  get '/guides', to: 'guides#index'
+  get '/guides/index', to: 'guides#index'
 
   # Start making a new card
   get '/guides/new', to: 'guides#new'
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   #show card
   get '/guides/:id/show', to: 'guides#show'
-  
+
 end
