@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   # get '/success/:id', to: 'cards#success'
 
   #show card
-  get '/guides/:id', to: 'guides#show'
+  # get '/guides/:id', to: 'guides#show'
   get '/guides/:id/send', to: 'guides#send_card'
 
-  get '/lala_guides/:uid', to: 'guides#hey'
+  get '/guides/:uid', to: 'guides#hey'
 
 end

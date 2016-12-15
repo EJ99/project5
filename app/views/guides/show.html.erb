@@ -1,50 +1,78 @@
+<nav>
+  <ul class="topnav" id="myTopnav">
+    <li><a href="/guides/new">Create A Guide</a></li>
+  </ul>
+
+</nav>
+
+
 <div class="container">
 
-<div class="sheet">
+<div class="sheet" id="content">
 
     <div class="introShow">
       <div class="">
-        <h2><%= @guide.title %></h2>
+        <h1 style="font-family: '<%= @guide.font1 =%>'" ><%= @guide.title %></h1>
+
       </div>
-      <img src="<%= @guide.image.url %>" alt="logo">
-      <!-- <img src="/assets/logo.png" alt=""> -->
-      <p><span class="gray">Description:</span> <%= @guide.description %></p>
-      <p><span class="gray">Created by:</span> <%= @guide.author %></p>
-      <p><span class="gray">Github:</span> <%= @guide.github %></p>
-      <p><span class="gray">Trello:</span> <%= @guide.trello %></p>
+      <img id="logo" src="<%= @guide.image.url %>" alt="logo">
+      <div class="blurb">
+        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray"></span><em><%= @guide.description %></em></p>
+        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Author:</span> <%= @guide.author %></p>
+        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Website:</span></p>
+        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Github:</span> <%= @guide.github %></p>
+        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Trello:</span> <%= @guide.trello %></p>
+      </div>
     </div>
 
-    <div class="fontShow">
-      <p style="color:<%= @guide.colour1 %>;"><span class="gray">Colour:</span> <%= @guide.colour1 %></p>
-      <p><span class="gray">Colour:</span> <%= @guide.colour2 %></p>
-      <p><span class="gray">Colour:</span> <%= @guide.colour3 %></p>
-      <p><span class="gray">Colour:</span> <%= @guide.colour4 %></p>
+    <div class="colourShow" style="border-bottom: 4px solid <%= @guide.colour4 %> ">
+      <div id="cc1" style="background-color:<%= @guide.colour1 %>; font-family: '<%= @guide.font2 =%>';" class="circleShow grow"><%= @guide.colour1 %>
+        <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc1"></button>
+      </div>
+
+      <div  id="cc2" style="background-color:<%= @guide.colour2 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour2 %>
+        <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc2"></button>
+      </div>
+      <div id="cc3" style="background-color:<%= @guide.colour3 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour3 %>
+        <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc3"></button>
+      </div>
+      <div id="cc4" style="background-color:<%= @guide.colour4 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour4 %>
+        <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc4"></button>
+      </div>
+      <div id="colourBlurb" style="font-family: '<%= @guide.font2 =%>'; border-bottom: 4px solid <%= @guide.colour4 %>"><p><span style="color: <%= @guide.colour1 %> "><%= @guide.colour1 %></span> is <%= @guide.title %>'s main colour. If the thing you’re making has colour, this colour should be in it.</p>
+        <p><span style="color: <%= @guide.colour2 %>"><%= @guide.colour2 %></span> is the secondary colour - it may be a good choice for elements that need to stand out. </p>
+        <p><span style="color: <%= @guide.colour3 %> "><%= @guide.colour3 %> </span>and <span style="color: <%= @guide.colour4 %> "><%= @guide.colour4 %></span> are tertiary accent colours that should mostly be used in small doses and once the primary colours have been used.</p></div>
     </div>
 
-    <div class="colourShow">
-      <div class="strip" id="strip1" style="background-color:<%= @guide.colour1 %>;">
-      </div><div class="strip" id="strip2" style="background-color:<%= @guide.colour2 %>;">
-      </div><div class="strip" id="strip3" style="background-color:<%= @guide.colour3 %>;">
-      </div><div class="strip" id="strip4" style="background-color:<%= @guide.colour4 %>;"></div>
+    <div class="tonesShow">
+      <div style="background-color:<%= @guide.tone2 %>;" class="tshow"></div>
+      <div style="background-color:<%= @guide.tone3 %>;" class="tshow"></div>
+      <div style="background-color:<%= @guide.tone4 %>;" class="tshow"></div>
+      <div style="background-color:<%= @guide.tone5 %>;" class="tshow"></div>
+      <div style="background-color:<%= @guide.tone6 %>;" class="tshow"></div>
+      <div style="background-color:<%= @guide.tone7 %>;" class="tshow"></div>
     </div>
 
-    <div class="fontShow">
-      <p> <span class="gray">Heading Font:</span> <%= @guide.font1 %></p>
-      <p><span class="gray">Paragraph Font:</span> <%= @guide.font2 %></p>
-      <h1 style="font-family: '<%= @guide.font1 =%>';">Heading 1</h1>
-      <h2 style="font-family: '<%= @guide.font1 =%>';">Heading 2</h2>
-      <h3 style="font-family: '<%= @guide.font1 =%>';">Heading 3</h3>
-      <h4 style="font-family: '<%= @guide.font1 =%>';">Heading 4</h4>
-      <p style="font-family: '<%= @guide.font2 =%>';">The quick brown fox...</p>
+
+    <div class="fontShow" style="border-bottom: 4px solid <%= @guide.colour4 %> ">
+      <h1 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h1>
+      <h2 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h2>
+      <h3 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h3>
+      <h4 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h4>
+      <p style="font-family: '<%= @guide.font2 =%>';"><%= @guide.font2 =%></p>
     </div>
 
+    <div class="codeSnippet">
+      <p>To embed your selected fonts into a webpage, copy this code into the head of your HTML document:</p>
+      <xmp><link href="https://fonts.googleapis.com/css?family="<%= @guide.font1 =%>|<%= @guide.font2 =%>" rel="stylesheet"></xmp>
+      <p>Then use the following CSS rules to specify these families:</p>
+      <xmp>font-family: '<%= @guide.font1 =%>';</xmp>
+      <xmp>font-family: '<%= @guide.font2 =%>';</xmp>
+
+    </div>
 
   </div>
 
-
-
-
-
-
+  </div>
 
 </div>

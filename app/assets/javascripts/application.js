@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .
 //= require materialize-sprockets
+//= require clipboard
+
+$(document).ready(function(){
+
+  var clip = new Clipboard('.clipboard-btn');
+  console.log(clip);
+
+});

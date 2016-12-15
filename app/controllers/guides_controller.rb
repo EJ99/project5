@@ -23,6 +23,15 @@ class GuidesController < ApplicationController
     @guide.recipient_email = ""
     @guide.recipient_name = ""
     @guide.image = ""
+    @guide.website = ""
+    @guide.tone1 = ""
+    @guide.tone2 = ""
+    @guide.tone3 = ""
+    @guide.tone4 = ""
+    @guide.tone5 = ""
+    @guide.tone6 = ""
+    @guide.tone7 = ""
+
 
   end
 
@@ -43,19 +52,26 @@ class GuidesController < ApplicationController
     @guide.recipient_email = params[:recipient_email]
     @guide.recipient_name = params[:recipient_name]
     @guide.image = params[:image]
+    @guide.website = params[:website]
+    @guide.tone2 = params[:tone2]
+    @guide.tone3 = params[:tone3]
+    @guide.tone4 = params[:tone4]
+    @guide.tone5 = params[:tone5]
+    @guide.tone6 = params[:tone6]
+    @guide.tone7 = params[:tone7]
     @guide.uid = SecureRandom.urlsafe_base64
 
     if @guide.save
       GuideMailer.send_guide(@guide).deliver
-      redirect_to "/guides/#{@guide.id}"
+      redirect_to "/guides/#{@guide.uid}"
     else
       render :new
     end
   end
 
-  def show
-    @guide = Guide.find(params[:id])
-  end
+  # def show
+  #   @guide = Guide.find(params[:id])
+  # end
 
   def hey
     @guide = Guide.find_by(uid: params[:uid])

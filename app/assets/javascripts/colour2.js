@@ -7,11 +7,58 @@ function getRandomColour() {
     return colour;
 }
 
+function ColorLuminance(hex, lum) {
+
+	// validate hex string
+	hex = String(hex).replace(/[^0-9a-f]/gi, '');
+	if (hex.length < 6) {
+		hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+	}
+	lum = lum || 0;
+
+	// convert to decimal and change luminosity
+	var rgb = "#", c, i;
+	for (i = 0; i < 3; i++) {
+		c = parseInt(hex.substr(i*2,2), 16);
+		c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+		rgb += ("00"+c).substr(c.length);
+	}
+	return rgb;
+}
+
+function getTones(){
+  var c1 = $("#colourValueHEX1" ).val();
+  // $('.tone1').css({'background-color': c1}).text(c1.toUpperCase());
+
+  var c2 = ColorLuminance(c1, -0.6);
+  $('.tone2').css({'background-color': c2}).text(c2.toUpperCase());
+  $('.t2').val(c2)
+
+  var c3 = ColorLuminance(c1, -0.3)
+  $('.tone3').css({'background-color': c3}).text(c3.toUpperCase());
+  $('.t3').val(c3)
+
+  var c4 = ColorLuminance(c1, -0.1);
+  $('.tone4').css({'background-color': c4}).text(c4.toUpperCase());
+  $('.t4').val(c4)
+
+  var c5 = ColorLuminance(c1, 0.3);
+  $('.tone5').css({'background-color': c5}).text(c5.toUpperCase());
+  $('.t5').val(c5)
+
+  var c6 = ColorLuminance(c1, 0.6);
+  $('.tone6').css({'background-color': c6}).text(c6.toUpperCase());
+  $('.t6').val(c6)
+
+  var c7 = ColorLuminance(c1, 0.9);
+  $('.tone7').css({'background-color': c7}).text(c7.toUpperCase());
+  $('.t7').val(c7)
+}
+
 $(document).ready(function() {
 
-  //COLOUR PALETTE
+  //GET COLOUR PALETTE
   $("#getPalette").on('click', function(event) {
-    console.log('hello')
     event.preventDefault();
     var colour1 = getRandomColour();
     var colour2 = getRandomColour();
@@ -30,25 +77,30 @@ $(document).ready(function() {
     $('#colourValueHEX4').attr('value', colour4)
     $('#circle4').css({'background-color': colour4});
 
+    //TONE
+    getTones();
+
   });
 
   //GENERATE INDIVIDUAL COLOURS
 
   $(".getColour").on('click', function(event) {
-    console.log('hello')
     event.preventDefault();
     var colour = getRandomColour();
     var $colourInput = $(event.target).closest('.line').find('.colourValueHEX');
     var $circle = $(event.target).closest('.line').find('.circle');
     $colourInput.val(colour);
     $circle.css({'background-color': colour});
+    getTones();
   });
 
   //DYNAMICALLY CHANGE COLOUR OF HEX
   $(".colourValueHEX").on("change paste keyup", function() {
      var $circle = $(this).closest('.line').find('.circle');
-     console.log($circle);
      $circle.css({'background-color': $(this).val()});
+
+    //TONE
+    getTones();
   });
 
   //LOREM, IPSUM, SAMUEL
@@ -99,11 +151,23 @@ $(document).ready(function() {
   });
 
 
+  //NAV SCROLL
+
   $('#myTopnav a').click(function(){
     console.log('hi')
     var faqid = $(this).attr("href");
     $('body').animate({scrollTop: $(faqid).offset().top}, "slow");
     return false;
-    });
+  });
+
+  $('.next').click(function(){
+    console.log('hi')
+    var faqid = $(this).attr("href");
+    $('body').animate({scrollTop: $(faqid).offset().top}, "slow");
+    return false;
+  });
+
+
+
 
 });

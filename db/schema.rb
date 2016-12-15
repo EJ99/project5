@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215034152) do
+ActiveRecord::Schema.define(version: 20161215123659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20161215034152) do
     t.string   "recipient_name"
     t.string   "image"
     t.string   "uid"
+    t.string   "website"
+    t.string   "tone1"
+    t.string   "tone2"
+    t.string   "tone3"
+    t.string   "tone4"
+    t.string   "tone5"
+    t.string   "tone6"
+    t.string   "tone7"
   end
 
 end

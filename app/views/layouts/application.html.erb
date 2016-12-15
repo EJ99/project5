@@ -4,24 +4,10 @@
     <title>Styleguide</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Inconsolata|Lobster|Lora|Montserrat|Noto+Serif|Oswald|Playfair+Display|Raleway|Roboto|Slabo+27px|Space+Mono" rel="stylesheet">
   <body>
-
-  <nav>
-    <ul class="topnav" id="myTopnav">
-      <li><a href="/guides/new">Create</a></li>
-      <li><%= link_to "Logo", '#section1' %></li>
-      <li><%= link_to "Colour", '#section2' %></li>
-      <li><%= link_to "Type", '#section3' %></li>
-      <li><%= link_to "Send", '#section5' %></li>
-      <li class="icon">
-        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-      </li>
-    </ul>
-
-  </nav>
 
 
 

@@ -1,3 +1,18 @@
+<nav>
+  <ul class="topnav" id="myTopnav">
+    <li><a href="/guides/new">Create</a></li>
+    <li><%= link_to "Logo", '#section1' %></li>
+    <li><%= link_to "Colour", '#section2' %></li>
+    <li><%= link_to "Type", '#section3' %></li>
+    <li><%= link_to "Send", '#section5' %></li>
+    <li class="icon">
+      <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </li>
+  </ul>
+
+</nav>
+
+
 <form action="/guides" method="post" class="col 5" enctype="multipart/form-data">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
@@ -25,12 +40,15 @@
 
       </div>
 
-      <h2>Logo</h2>
-
-        <label for="file">Upload image</label>
+        <h3>Upload Logo</h3>
         <input class="file" name="image" type="file">
+          <!-- <button id="next1" style="display:block; margin:7% auto 2%">NEXT</button> -->
       </div>
+
+      <a class="next" href="#section2"><img class="arrow" src="/assets/arrow1.png" alt=""></a>
+
     </div>
+
     </div>
 
 
@@ -39,15 +57,16 @@
 
   <div class="section" id="section2">
 
-  <div class="center">
+  <div class="center1">
 
   <h1>Colour Palette</h1>
-  <button id="getPalette" style="display:block">GET PALETTE</button>
+  <button id="getPalette" style="display:block">GET COLOURS</button>
+  <p id="tip">press enter to get palette</p>
 
     <div class="picker" class="col 5">
       <div class="line">
         <div>
-          <button class="getColour">Randomize</button>
+          <button class="getColour">RANDOMIZE</button>
         </div>
         <div class="circle" id="circle1"></div>
         <!-- HEX Target -->
@@ -64,7 +83,7 @@
     <div class="picker ">
       <div class="line">
         <div>
-          <button class="getColour">Randomize</button>
+          <button class="getColour">RANDOMIZE</button>
         </div>
         <div class="circle" id="circle2"></div>
         <!-- HEX Target -->
@@ -80,7 +99,7 @@
     <div class="picker">
       <div class="line">
         <div>
-          <button class="getColour">Randomize</button>
+          <button class="getColour">RANDOMIZE</button>
         </div>
         <div class="circle" id="circle3"></div>
         <!-- HEX Target -->
@@ -95,7 +114,7 @@
     <div class="picker">
       <div class="line">
         <div>
-          <button class="getColour">Randomize</button>
+          <button class="getColour">RANDOMIZE</button>
         </div>
         <div class="circle" id="circle4"></div>
         <!-- HEX Target -->
@@ -103,6 +122,32 @@
         <input name="colour4" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX4" value="">
         <!-- HEX Trigger -->
       </div>
+    </div>
+
+
+      <h2 id="hues">Primary Hues</h2>
+      <div class="tonesWrapper">
+         <div class="tone2 tones" style="float: left;"></div>
+         <div class="tone3 tones" style="float: left;"></div>
+         <div class="tone4 tones" style="float: left;"></div>
+         <div class="tone5 tones" style="float: left;"></div>
+         <div class="tone6 tones" style="float: left;"></div>
+         <div class="tone7 tones" style="float: left;"></div>
+         <br style="clear: left;" />
+
+         <!-- HIDDEN PARAMS -->
+
+         <input type="hidden" name="tone2" value="" class="t2">
+         <input type="hidden" name="tone3" value="" class="t3">
+         <input type="hidden" name="tone4" value="" class="t4">
+         <input type="hidden" name="tone5" value="" class="t5">
+         <input type="hidden" name="tone6" value="" class="t6">
+         <input type="hidden" name="tone7" value="" class="t7">
+
+      </div>
+
+        <a class="next" href="#section3"><img class="arrow" src="/assets/arrow2.png" alt=""></a>
+
     </div>
 
   </div>
@@ -117,8 +162,8 @@
     <h2>Typography</h2>
 
     <div class="styled-select">
-        <label style="display:block" for="font1">Header Font</label>
         <select id="font1" name="font1">
+          <<option selected="true" disabled="disabled">Header Font</option>
           <option name="Roboto" value="Roboto">Roboto</option>
           <option name="Space Mono" value="Space Mono">Space Mono</option>
           <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
@@ -134,12 +179,13 @@
 
         </select>
     </div>
-      <input type="text" class="test1" name="" value="">
+      <input type="text" class="test1" name="" value="hello">
     <h1 class="header">hello</h1>
 
+    <p class="paragraph">choose an ipsum</p>
 
-      <label for="font2" style="display:block">Paragraph Font</label>
       <select id="font2" name="font2">
+        <option selected="true" disabled="disabled">Paragraph Font</option>
         <option name="Roboto" value="Roboto">Roboto</option>
         <option name="Space Mono" value="Space Mono">Space Mono</option>
         <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
@@ -155,14 +201,13 @@
       </select>
 
       <div class="fontPreview">
+        <button id="hipster" class="ipsum">HIPSTER</button>
+        <button id="lorem" class="ipsum">LOREM</button>
+        <button id="samuel" class="ipsum">SAMUEL L</button>
         <!-- <textarea name="name" rows="8" cols="50" class="test2 "></textarea> -->
-        <p class="paragraph">my name is</p>
-        <p>Choose an ipsum: </p>
       </div>
 
-      <button id="hipster" class="ipsum">HIPSTER</button>
-      <button id="lorem" class="ipsum">LOREM</button>
-      <button id="samuel" class="ipsum">SAMUEL L</button>
+      <a class="next" href="#section5"><img class="arrow" src="/assets/arrow2.png" alt=""></a>
 
     </div>
   </div>
@@ -183,34 +228,38 @@
 
   <div class="section" id="section5" id="refs">
 
-    <div class="center">
+    <div class="center3">
 
     <h2>Project References</h2>
-
-        <label for="trello">Trello</label>
-     <div class="">
-        <input class="trello" name="trello" type="text">
-      </div>
-        <label for="github">Github</label>
+    <!-- <label display:"block" for="website">Website</label> -->
     <div class="">
-      <input class="github" name="github" type="text">
+      <input class="website" name="website" type="text" placeholder="Website">
+    </div>
+        <!-- <label for="trello">Trello</label> -->
+     <div class="">
+        <input class="trello" name="trello" type="text" placeholder="Trello">
+      </div>
+        <!-- <label for="github">Github</label> -->
+    <div class="">
+      <input class="github" name="github" type="text" placeholder="Github">
       </div>
 
 
 
     <h2>Recipient</h2>
-            <label display:"block" for="recipient_name">Recipient Name</label>
+
+            <!-- <label display:"block" for="recipient_name">Recipient Name</label> -->
     <div class="">
-      <input class="recipient_name" name="recipient_name" type="text">
+      <input class="recipient_name" name="recipient_name" type="text" placeholder="Recipient Name">
     </div>
-      <label for="recipient_email">Recipient Email</label>
+      <!-- <label for="recipient_email">Recipient Email</label> -->
     <div class="">
 
-      <input class="recipient_email" name="recipient_email" type="text">
+      <input class="recipient_email" name="recipient_email" type="text" placeholder="Recipient Email">
     </div>
 
 
-      <button>SEND</button>
+      <button id="send">SEND</button>
 
     </div>
 
