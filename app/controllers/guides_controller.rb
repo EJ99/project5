@@ -22,6 +22,7 @@ class GuidesController < ApplicationController
     @guide.icon = ""
     @guide.recipient_email = ""
     @guide.recipient_name = ""
+    @guide.image = ""
 
   end
 
@@ -41,10 +42,12 @@ class GuidesController < ApplicationController
     @guide.icon = params[:icon]
     @guide.recipient_email = params[:recipient_email]
     @guide.recipient_name = params[:recipient_name]
+    @guide.image = params[:image]
+    @guide.uid = SecureRandom.urlsafe_base64
 
     if @guide.save
       GuideMailer.send_guide(@guide).deliver
-      render :show
+      redirect_to "/guides/#{@guide.id}"
     else
       render :new
     end
@@ -54,9 +57,16 @@ class GuidesController < ApplicationController
     @guide = Guide.find(params[:id])
   end
 
+  def hey
+    @guide = Guide.find_by(uid: params[:uid])
+    render :show
+  end
+
 
   def success
     render :success
   end
+
+
 
 end

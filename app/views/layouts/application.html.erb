@@ -12,10 +12,10 @@
   <nav>
     <ul class="topnav" id="myTopnav">
       <li><a href="/guides/new">Create</a></li>
-      <li><a href="#news">Logo</a></li>
-      <li><a href="#contact">Colour</a></li>
-      <li><a href="#about">Type</a></li>
-      <li><a href="#about">Icons</a></li>
+      <li><%= link_to "Logo", '#section1' %></li>
+      <li><%= link_to "Colour", '#section2' %></li>
+      <li><%= link_to "Type", '#section3' %></li>
+      <li><%= link_to "Send", '#section5' %></li>
       <li class="icon">
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
       </li>
@@ -24,7 +24,9 @@
   </nav>
 
 
+
     <%= yield %>
+
 
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
 

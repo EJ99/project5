@@ -18,13 +18,18 @@ $(document).ready(function() {
     var colour3 = getRandomColour();
     var colour4 = getRandomColour();
     $('#colourValueHEX1').val(colour1);
+    $('#colourValueHEX1').attr('value', colour1)
     $('#circle1').css({'background-color': colour1});
-    $('#colourValueHEX2').val(colour1);
+    $('#colourValueHEX2').val(colour2);
+    $('#colourValueHEX2').attr('value', colour2)
     $('#circle2').css({'background-color': colour2});
-    $('#colourValueHEX3').val(colour1);
+    $('#colourValueHEX3').val(colour3);
+    $('#colourValueHEX3').attr('value', colour3)
     $('#circle3').css({'background-color': colour3});
-    $('#colourValueHEX3').val(colour1);
-    $('#circle4').css({'background-color': colour3});
+    $('#colourValueHEX4').val(colour4);
+    $('#colourValueHEX4').attr('value', colour4)
+    $('#circle4').css({'background-color': colour4});
+
   });
 
   //GENERATE INDIVIDUAL COLOURS
@@ -50,14 +55,14 @@ $(document).ready(function() {
 
   $("#hipster").on("click", function(event) {
       event.preventDefault();
-      var hipster = "Cold-pressed post-ironic fam, flexitarian ugh pork belly sartorial truffaut. +1 XOXO portland mixtape meggings, keffiyeh tote bag. Swag cold-pressed health goth tattooed, street art vexillologist semiotics fingerstache taxidermy disrupt kale chips succulents coloring book. Iceland edison bulb vegan man braid vinyl viral. Subway tile chicharrones humblebrag flexitarian. Vice lumbersexual pug, enamel pin quinoa pabst four loko mixtape hashtag. Tote bag flexitarian photo booth irony cardigan, everyday carry hexagon thundercats readymade XOXO portland mixtape."
+      var hipster = "Cold-pressed post-ironic fam, flexitarian ugh pork belly sartorial truffaut. +1 XOXO portland mixtape meggings, keffiyeh tote bag. Swag cold-pressed health goth tattooed, street art vexillologist semiotics fingerstache taxidermy disrupt kale chips succulents coloring book. Iceland edison bulb vegan man braid vinyl viral. Subway tile chicharrones humblebrag flexitarian."
       $(".test2").val(hipster);
       $('.paragraph').text(hipster);
   });
 
   $("#lorem").on("click", function(event) {
       event.preventDefault();
-      var lorem = "Ut id orci non elit congue sodales. Nullam eu felis at lacus ultricies accumsan. In eu magna nec felis tempor suscipit in consequat ex. Donec iaculis nunc diam, in consequat elit sagittis ut. In lobortis pellentesque velit non accumsan. Integer vel elit at orci dignissim ultricies. Nunc sed aliquet massa. Proin maximus, velit vulputate malesuada posuere, ligula odio consectetur libero, vitae elementum libero leo ut justo. Nunc in vestibulum eros, in pretium quam. Pellentesque vitae semper turpis. Ut massa augue, sollicitudin nec mi nec, facilisis accumsan enim. Donec pretium faucibus eros, quis gravida odio molestie in. Nulla facilisi. Cras gravida orci ut elit porta, eget tincidunt massa efficitur."
+      var lorem = "Ut id orci non elit congue sodales. Nullam eu felis at lacus ultricies accumsan. In eu magna nec felis tempor suscipit in consequat ex. Donec iaculis nunc diam, in consequat elit sagittis ut. In lobortis pellentesque velit non accumsan. Integer vel elit at orci dignissim ultricies. Nunc sed aliquet massa. Proin maximus, velit vulputate malesuada posuere, ligula odio consectetur libero."
       $(".test2").val(lorem);
       $('.paragraph').text(lorem);
   });
@@ -94,7 +99,11 @@ $(document).ready(function() {
   });
 
 
-
-
+  $('#myTopnav a').click(function(){
+    console.log('hi')
+    var faqid = $(this).attr("href");
+    $('body').animate({scrollTop: $(faqid).offset().top}, "slow");
+    return false;
+    });
 
 });

@@ -1,56 +1,58 @@
-<form action="/guides" method="post" class="col 5">
+<form action="/guides" method="post" class="col 5" enctype="multipart/form-data">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <!-- SECTION 1A -->
 
   <div class="section" id="section1">
 
-    <h2>Project</h2>
+    <div class="center">
+      <div class="modal">
 
-    <div class="start">
-      <label for="">Title</label>
-      <input class="title" name="title" type="text">
+      <h2>New Project</h2>
 
-      <label for="description">Description</label>
-      <input class="description" name="description" type="text">
+        <div class="">
+          <!-- <label for="">Title</label> -->
+          <input class="title" name="title" type="text" placeholder="Title">
+        </div>
 
-      <label for="author">Author</label>
-      <input class="author" name="author" type="text">
+      <div class="">
+        <!-- <label for="description">Description</label> -->
+        <input class="description" name="description" placeholder="Description" type="text">
+      </div>
+      <div class="">
+        <!-- <label for="author">Author</label> -->
+        <input class="author" name="author" placeholder="Author" type="text">
+
+      </div>
+
+      <h2>Logo</h2>
+
+        <label for="file">Upload image</label>
+        <input class="file" name="image" type="file">
+      </div>
     </div>
-
-  </div>
-
-  <!-- SECTION 1A -->
-
-  <div class="section" id="section1b">
-
-    <h2>Logo</h2>
-
-      <label for="file">Upload an image</label>
-      <input class="file" name="file" type="file">
-
-  </div>
+    </div>
 
 
   <!-- SECTION 2 -->
   <!-- COLOUR ONE -->
 
-  <hr>
-
-  <h2>Colour palette</h2>
-  <button id="getPalette">generate palette</button>
-
   <div class="section" id="section2">
 
+  <div class="center">
+
+  <h1>Colour Palette</h1>
+  <button id="getPalette" style="display:block">GET PALETTE</button>
 
     <div class="picker" class="col 5">
       <div class="line">
+        <div>
+          <button class="getColour">Randomize</button>
+        </div>
         <div class="circle" id="circle1"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX"></label>
-        <input name="colour1" class="colourValueHEX" id="colourValueHEX1" value="">
+        <input name="colour1" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX1" value="">
         <!-- HEX Trigger -->
-        <button class="getColour">Generate Random</button>
       </div>
     </div>
 
@@ -61,12 +63,13 @@
 
     <div class="picker ">
       <div class="line">
+        <div>
+          <button class="getColour">Randomize</button>
+        </div>
         <div class="circle" id="circle2"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX"></label>
-        <input name="colour2" class="colourValueHEX" id="colourValueHEX2" value="#43d614">
+        <input name="colour2" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX2" value="">
         <!-- HEX Trigger -->
-        <button class="getColour">Generate Random</button>
       </div>
     </div>
 
@@ -76,12 +79,13 @@
 
     <div class="picker">
       <div class="line">
+        <div>
+          <button class="getColour">Randomize</button>
+        </div>
         <div class="circle" id="circle3"></div>
         <!-- HEX Target -->
-        <label for="colourValueHEX"></label>
-        <input name="colour3" class="colourValueHEX" id="colourValueHEX3" value="#43d614">
+        <input name="colour3" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX3" value="">
         <!-- HEX Trigger -->
-        <button class="getColour">Generate Random</button>
       </div>
     </div>
 
@@ -90,26 +94,30 @@
 
     <div class="picker">
       <div class="line">
+        <div>
+          <button class="getColour">Randomize</button>
+        </div>
         <div class="circle" id="circle4"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
-        <input name="colour4" class="colourValueHEX" id="colourValueHEX4" value="#43d614">
+        <input name="colour4" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX4" value="">
         <!-- HEX Trigger -->
-        <button class="getColour">Generate Random</button>
       </div>
     </div>
 
+  </div>
   </div>
 
 
 
   <!-- SECTION 3 -->
-  <div class="section" id="section3" class="col 12">
+  <div class="section" id="section3" id="type">
+    <div class="center2">
 
     <h2>Typography</h2>
 
     <div class="styled-select">
-        <label for="font1">Header Font</label>
+        <label style="display:block" for="font1">Header Font</label>
         <select id="font1" name="font1">
           <option name="Roboto" value="Roboto">Roboto</option>
           <option name="Space Mono" value="Space Mono">Space Mono</option>
@@ -126,9 +134,11 @@
 
         </select>
     </div>
+      <input type="text" class="test1" name="" value="">
+    <h1 class="header">hello</h1>
 
 
-      <label for="font2">Paragaph Font</label>
+      <label for="font2" style="display:block">Paragraph Font</label>
       <select id="font2" name="font2">
         <option name="Roboto" value="Roboto">Roboto</option>
         <option name="Space Mono" value="Space Mono">Space Mono</option>
@@ -145,60 +155,65 @@
       </select>
 
       <div class="fontPreview">
-        <h1 class="header">hello</h1>
-        <input type="text" class="test1" name="" value="">
+        <!-- <textarea name="name" rows="8" cols="50" class="test2 "></textarea> -->
         <p class="paragraph">my name is</p>
-        <textarea name="name" rows="8" cols="80" class="test2 "></textarea>
-        <p>This text will be used in the guide</p>
+        <p>Choose an ipsum: </p>
       </div>
 
-      <button id="hipster" class="ipsum">hipster ipsum</button>
-      <button id="lorem" class="ipsum">lorem ipsum</button>
-      <button id="samuel" class="ipsum">samuel ipsum</button>
+      <button id="hipster" class="ipsum">HIPSTER</button>
+      <button id="lorem" class="ipsum">LOREM</button>
+      <button id="samuel" class="ipsum">SAMUEL L</button>
+
+    </div>
   </div>
 
 
   <!-- SECTION 4 -->
 
-  <hr>
 
-  <div class="section" id="section4">
+  <!-- <div class="section" id="section4">
 
     <h2>Icons</h2>
 
   </div>
-
+ -->
 
   <!-- SECTION 5 -->
 
-  <hr>
 
-  <div class="section" id="section5">
+  <div class="section" id="section5" id="refs">
 
-    <h2>References</h2>
+    <div class="center">
 
-      <label for="trello">Trello</label>
-      <input class="trello" name="trello" type="text">
+    <h2>Project References</h2>
 
-      <label for="github">Github</label>
+        <label for="trello">Trello</label>
+     <div class="">
+        <input class="trello" name="trello" type="text">
+      </div>
+        <label for="github">Github</label>
+    <div class="">
       <input class="github" name="github" type="text">
+      </div>
 
-  </div>
 
-  <hr>
-
-  <div class="section" id="section6">
 
     <h2>Recipient</h2>
-
-      <label for="recipient_name">Recipient Name</label>
+            <label display:"block" for="recipient_name">Recipient Name</label>
+    <div class="">
       <input class="recipient_name" name="recipient_name" type="text">
-
+    </div>
       <label for="recipient_email">Recipient Email</label>
+    <div class="">
+
       <input class="recipient_email" name="recipient_email" type="text">
+    </div>
+
+
+      <button>SEND</button>
+
+    </div>
 
   </div>
 
-
-  <button>SEND</button>
 </form>
