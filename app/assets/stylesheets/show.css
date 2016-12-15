@@ -8,7 +8,7 @@
 
 .sheet{
   margin: 10% 15%;
-  padding:2% 5%;
+  padding:2% 5% 5%;
   background-color: white;
   box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.2);
 }
@@ -17,9 +17,24 @@
     font-size: 70px;
 }
 
+#first{
+  margin-top: -40px;
+  border-bottom: 2px solid black;
+  line-height: 2em;
+  font-weight: bold;
+}
+
+.headings{
+  font-weight: bold;
+  clear:both;
+  border-bottom: 2px solid black;
+  line-height: 2em;
+}
+
 .blurb{
-  font-size: 22px;
-  margin-left: 150px;
+  font-size: 20px;
+  margin-left: 130px;
+  margin-top: 5%;
 }
 
 .blurb, #logo{
@@ -29,6 +44,7 @@
 .colourShow{
   width:100%;
   clear:both;
+  margin-top: 6%;
 }
 
 .circleShow {
@@ -71,22 +87,29 @@
 #colourBlurb{
   float:left;
   width:50%;
-  line-height: 2em;
+  line-height: 1.8em;
   font-size: 1.2em;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 5%;
+  margin-left: 3%;
 }
 
 .tonesShow{
-    margin-left: 50px;
+    margin-left: 70px;
     float:left;
 }
 
 .tshow{
-  width:50px;
-  height:50px;
+  width:60px;
+  height:60px;
   display: inline-block ;
 }
 
 .fontShow{
   clear:both;
+  margin-bottom: 5%;
+}
+
+.codeSnippet{
+  font-size: 17px;
 }

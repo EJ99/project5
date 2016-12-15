@@ -13,19 +13,20 @@
     <div class="introShow">
       <div class="">
         <h1 style="font-family: '<%= @guide.font1 =%>'" ><%= @guide.title %></h1>
-
+        <p id="first">STYLEGUIDE</p>
       </div>
       <img id="logo" src="<%= @guide.image.url %>" alt="logo">
       <div class="blurb">
-        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray"></span><em><%= @guide.description %></em></p>
-        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Author:</span> <%= @guide.author %></p>
-        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Website:</span></p>
-        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Github:</span> <%= @guide.github %></p>
-        <p style="font-family: '<%= @guide.font2 =%>';"><span style="font-weight:bold" class="gray">Trello:</span> <%= @guide.trello %></p>
+        <p><span style="font-weight:bold" class="gray"></span><em><%= @guide.description %></em></p>
+        <p><span style="font-weight:bold" class="gray">AUTHOR:</span> <%= @guide.author %></p>
+        <p><span style="font-weight:bold" class="gray">WEBSITE:</span></p>
+        <p><span style="font-weight:bold" class="gray">GITHUB:</span> <%= @guide.github %></p>
+        <p><span style="font-weight:bold" class="gray">TRELLO:</span> <%= @guide.trello %></p>
       </div>
     </div>
 
-    <div class="colourShow" style="border-bottom: 4px solid <%= @guide.colour4 %> ">
+    <p class="headings">COLOUR PALETTE</p>
+    <div class="colourShow" >
       <div id="cc1" style="background-color:<%= @guide.colour1 %>; font-family: '<%= @guide.font2 =%>';" class="circleShow grow"><%= @guide.colour1 %>
         <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc1"></button>
       </div>
@@ -39,12 +40,14 @@
       <div id="cc4" style="background-color:<%= @guide.colour4 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour4 %>
         <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc4"></button>
       </div>
-      <div id="colourBlurb" style="font-family: '<%= @guide.font2 =%>'; border-bottom: 4px solid <%= @guide.colour4 %>"><p><span style="color: <%= @guide.colour1 %> "><%= @guide.colour1 %></span> is <%= @guide.title %>'s main colour. If the thing you’re making has colour, this colour should be in it.</p>
+      <div id="colourBlurb" style="font-family: 'helvetica'"><p><span style="color: <%= @guide.colour1 %> "><%= @guide.colour1 %></span> is <%= @guide.title %>'s main colour. If the thing you’re making has colour, this colour should be in it.</p>
         <p><span style="color: <%= @guide.colour2 %>"><%= @guide.colour2 %></span> is the secondary colour - it may be a good choice for elements that need to stand out. </p>
-        <p><span style="color: <%= @guide.colour3 %> "><%= @guide.colour3 %> </span>and <span style="color: <%= @guide.colour4 %> "><%= @guide.colour4 %></span> are tertiary accent colours that should mostly be used in small doses and once the primary colours have been used.</p></div>
+        <p><span style="color: <%= @guide.colour3 %> "><%= @guide.colour3 %> </span>and <span style="color: <%= @guide.colour4 %> "><%= @guide.colour4 %></span> are tertiary accent colours that should mostly be used in small doses and only once the primary colours have been used.</p></div>
     </div>
 
+
     <div class="tonesShow">
+      <p class="headings">PRIMARY HUES</p>
       <div style="background-color:<%= @guide.tone2 %>;" class="tshow"></div>
       <div style="background-color:<%= @guide.tone3 %>;" class="tshow"></div>
       <div style="background-color:<%= @guide.tone4 %>;" class="tshow"></div>
@@ -54,7 +57,8 @@
     </div>
 
 
-    <div class="fontShow" style="border-bottom: 4px solid <%= @guide.colour4 %> ">
+    <div class="fontShow" >
+      <p class="headings">TYPOGRAPHY</p>
       <h1 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h1>
       <h2 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h2>
       <h3 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h3>
@@ -63,6 +67,7 @@
     </div>
 
     <div class="codeSnippet">
+      <p class="headings">CODE</p>
       <p>To embed your selected fonts into a webpage, copy this code into the head of your HTML document:</p>
       <xmp><link href="https://fonts.googleapis.com/css?family="<%= @guide.font1 =%>|<%= @guide.font2 =%>" rel="stylesheet"></xmp>
       <p>Then use the following CSS rules to specify these families:</p>
