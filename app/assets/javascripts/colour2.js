@@ -1,3 +1,5 @@
+//GETS RANDOM HEX VALUE
+
 function getRandomColour() {
     var letters = '0123456789ABCDEF';
     var colour = '#';
@@ -6,6 +8,8 @@ function getRandomColour() {
     }
     return colour;
 }
+
+//GETS RANDOM ColorLuminance
 
 function ColorLuminance(hex, lum) {
 
@@ -25,6 +29,8 @@ function ColorLuminance(hex, lum) {
 	}
 	return rgb;
 }
+
+//CHANGES HUES TO DIFF TONE
 
 function getTones(){
   var c1 = $("#colourValueHEX1" ).val();
@@ -55,53 +61,108 @@ function getTones(){
   $('.t7').val(c7)
 }
 
+
+
 $(document).ready(function() {
 
-  //GET COLOUR PALETTE
-  $("#getPalette").on('click', function(event) {
-    event.preventDefault();
-    var colour1 = getRandomColour();
-    var colour2 = getRandomColour();
-    var colour3 = getRandomColour();
-    var colour4 = getRandomColour();
-    $('#colourValueHEX1').val(colour1);
-    $('#colourValueHEX1').attr('value', colour1)
-    $('#circle1').css({'background-color': colour1});
-    $('#colourValueHEX2').val(colour2);
-    $('#colourValueHEX2').attr('value', colour2)
-    $('#circle2').css({'background-color': colour2});
-    $('#colourValueHEX3').val(colour3);
-    $('#colourValueHEX3').attr('value', colour3)
-    $('#circle3').css({'background-color': colour3});
-    $('#colourValueHEX4').val(colour4);
-    $('#colourValueHEX4').attr('value', colour4)
-    $('#circle4').css({'background-color': colour4});
+//CHANGE LOCK STATUS ON CLICK
+var locked = false;
 
-    //TONE
-    getTones();
-
-  });
+$('.lock').on('click',function(){
+  if($(this).attr('data-click-state') == 0) {
+    $(this).attr('data-click-state', 1)
+    $(this).css('color', 'red')
+    $(this).text('lock')
+    locked = true;
+    return locked;
+  } else {
+    $(this).attr('data-click-state', 0)
+    $(this).css('color', 'blue')
+    $(this).text('unlock')
+    locked = false;
+    return locked;
+  }
+});
 
   //GENERATE INDIVIDUAL COLOURS
 
-  $(".getColour").on('click', function(event) {
-    event.preventDefault();
-    var colour = getRandomColour();
-    var $colourInput = $(event.target).closest('.line').find('.colourValueHEX');
-    var $circle = $(event.target).closest('.line').find('.circle');
-    $colourInput.val(colour);
-    $circle.css({'background-color': colour});
-    getTones();
-  });
+    $(".getColour").on('click', function(event) {
+      event.preventDefault();
+
+      console.log(locked);
+      var colour = getRandomColour();
+      var $colourInput = $(event.target).closest('.line').find('.colourValueHEX');
+      var $circle = $(event.target).closest('.line').find('.circle');
+      var $lockstatus = $(event.target).closest('.line').find('.lock').text();
+      console.log($lockstatus)
+
+      if($lockstatus === 'lock'){
+        $colourInput.val(colour);
+        $circle.css({'background-color': colour});
+        getTones();
+      }
+    });
+
+    //CHANGE ALL COLOURS - GET COLOURS BUTTON
+    $("#getPalette").on('click', function(event) {
+      event.preventDefault();
+      var colour1 = getRandomColour();
+      var colour2 = getRandomColour();
+      var colour3 = getRandomColour();
+      var colour4 = getRandomColour();
+      var $lockstatus1 = $('#lock1').text();
+      var $lockstatus2 = $('#lock2').text();
+      var $lockstatus3 = $('#lock3').text();
+      var $lockstatus4 = $('#lock4').text();
+
+      if($lockstatus1 === 'lock'){
+        $('#colourValueHEX1').val(colour1);
+        $('#colourValueHEX1').attr('value', colour1)
+        $('#circle1').css({'background-color': colour1});
+      }
+       if($lockstatus2 === 'lock'){
+        $('#colourValueHEX2').val(colour2);
+        $('#colourValueHEX2').attr('value', colour2)
+        $('#circle2').css({'background-color': colour2});
+      }
+
+      if($lockstatus3 === 'lock'){
+        $('#colourValueHEX3').val(colour3);
+        $('#colourValueHEX3').attr('value', colour3)
+        $('#circle3').css({'background-color': colour3});
+      }
+
+      if($lockstatus4 === 'lock'){
+        $('#colourValueHEX4').val(colour4);
+        $('#colourValueHEX4').attr('value', colour4)
+        $('#circle4').css({'background-color': colour4});
+      }
+
+      //TONE
+      getTones();
+
+    });
 
   //DYNAMICALLY CHANGE COLOUR OF HEX
   $(".colourValueHEX").on("change paste keyup", function() {
+     var $lockstatus = $(this).closest('.line').find('.lock').text();
      var $circle = $(this).closest('.line').find('.circle');
+     var $input = document.getElementById("colourValueHEX1");
+     if($lockstatus === 'lock'){
      $circle.css({'background-color': $(this).val()});
 
     //TONE
     getTones();
+  }
   });
+
+  // //LOCK COLOURS
+  // $(".locked").on('click', function(event) {
+  //   event.preventDefault();
+  //   var lockedColour = $(event.target).closest('.line').find('.colourValueHEX').val();
+  //   console.log('lockedColour is : ' + lockedColour);
+  // });
+
 
   //LOREM, IPSUM, SAMUEL
 
@@ -121,7 +182,7 @@ $(document).ready(function() {
 
   $("#samuel").on("click", function(event) {
       event.preventDefault();
-      var samuel = "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb."
+      var samuel = "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee."
       $(".test2").val(samuel);
       $('.paragraph').text(samuel);
   });
@@ -166,10 +227,5 @@ $(document).ready(function() {
     $('body').animate({scrollTop: $(faqid).offset().top}, "slow");
     return false;
   });
-
-
-  
-
-
 
 });

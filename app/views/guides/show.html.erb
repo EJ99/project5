@@ -19,7 +19,7 @@
       <div class="blurb">
         <p><span style="font-weight:bold" class="gray"></span><em><%= @guide.description %></em></p>
         <p><span style="font-weight:bold" class="gray">AUTHOR:</span> <%= @guide.author %></p>
-        <p><span style="font-weight:bold" class="gray">WEBSITE:</span></p>
+        <p><span style="font-weight:bold" class="gray">WEBSITE:</span><%= @guide.website %></p>
         <p><span style="font-weight:bold" class="gray">GITHUB:</span> <%= @guide.github %></p>
         <p><span style="font-weight:bold" class="gray">TRELLO:</span> <%= @guide.trello %></p>
       </div>
@@ -56,23 +56,29 @@
       <div style="background-color:<%= @guide.tone7 %>;" class="tshow"></div>
     </div>
 
-
+    <p class="headings">TYPOGRAPHY</p>
     <div class="fontShow" >
-      <p class="headings">TYPOGRAPHY</p>
-      <h1 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h1>
-      <h2 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h2>
-      <h3 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h3>
-      <h4 style="font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h4>
-      <p style="font-family: '<%= @guide.font2 =%>';"><%= @guide.font2 =%></p>
+      <h1 style="color:<%= @guide.tone5 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h1>
+      <h2 style="color:<%= @guide.tone4 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h2>
+      <h3 style="color:<%= @guide.tone3 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h3>
+      <h4 style="color:<%= @guide.tone2 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h4>
+    </div>
+
+
+    <div class="paraShow">
+      <p class="headings">PARAGRAPH TEXT</p>
+      <p style="font-family: '<%= @guide.font2 =%>';">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
     </div>
 
     <div class="codeSnippet">
-      <p class="headings">CODE</p>
+      <p class="headings code">CODE</p>
       <p>To embed your selected fonts into a webpage, copy this code into the head of your HTML document:</p>
       <xmp><link href="https://fonts.googleapis.com/css?family="<%= @guide.font1 =%>|<%= @guide.font2 =%>" rel="stylesheet"></xmp>
       <p>Then use the following CSS rules to specify these families:</p>
-      <xmp>font-family: '<%= @guide.font1 =%>';</xmp>
-      <xmp>font-family: '<%= @guide.font2 =%>';</xmp>
+      <span class="text">Heading Text: </span><xmp>font-family: '<%= @guide.font1 =%>';</xmp>
+      <span class="text">Paragraph Text: </span><xmp>font-family: '<%= @guide.font2 =%>';</xmp>
+
+
 
     </div>
 

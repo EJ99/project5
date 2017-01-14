@@ -60,18 +60,21 @@
   <div class="center1">
 
   <h1>Colour Palette</h1>
-  <button id="getPalette" style="display:block">GET COLOURS</button>
+  <button id="getPalette" style="display:block">GET PALETTE</button>
   <p id="tip">press enter to get palette</p>
-
     <div class="picker" class="col 5">
       <div class="line">
         <div>
           <button class="getColour">RANDOMIZE</button>
+          <!-- <button class="locked">LOCK</button> -->
         </div>
+        <span class="lock" id="lock1">lock</span>
+        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle1"></div>
         <!-- HEX Target -->
         <input name="colour1" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX1" value="">
         <!-- HEX Trigger -->
+
       </div>
     </div>
 
@@ -85,6 +88,8 @@
         <div>
           <button class="getColour">RANDOMIZE</button>
         </div>
+        <span class="lock"  id="lock2">lock</span>
+        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle2"></div>
         <!-- HEX Target -->
         <input name="colour2" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX2" value="">
@@ -101,6 +106,8 @@
         <div>
           <button class="getColour">RANDOMIZE</button>
         </div>
+        <span class="lock"  id="lock3">lock</span>
+        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle3"></div>
         <!-- HEX Target -->
         <input name="colour3" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX3" value="">
@@ -116,6 +123,8 @@
         <div>
           <button class="getColour">RANDOMIZE</button>
         </div>
+        <span class="lock"  id="lock4">lock</span>
+        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle4"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
@@ -125,7 +134,7 @@
     </div>
 
 
-      <h2 id="hues">Primary Hues</h2>
+      <h2 id="hues">Primary Shades</h2>
       <div class="tonesWrapper">
          <div class="tone2 tones" style="float: left;"></div>
          <div class="tone3 tones" style="float: left;"></div>

@@ -5,7 +5,7 @@ class GuideMailer < ApplicationMailer
     @guide = guide
     @recipient_email = @guide.recipient_email
     @author = @guide.author
-    mail(to: @recipient_email, subject: "You've received a Style Guide from #{@author}")
+    mail(to: @recipient_email, subject: "You've received a styleguide from #{@author}")
   end
 
 end
