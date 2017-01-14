@@ -68,17 +68,17 @@ $(document).ready(function() {
 //CHANGE LOCK STATUS ON CLICK
 var locked = false;
 
-$('.lock').on('click',function(){
+$('.fa').on('click',function(){
   if($(this).attr('data-click-state') == 0) {
     $(this).attr('data-click-state', 1)
-    $(this).css('color', 'red')
-    $(this).text('lock')
+    $(this).css('color', 'black')
+    $(this).removeClass('fa-lock').addClass("fa-unlock-alt");
     locked = true;
     return locked;
   } else {
     $(this).attr('data-click-state', 0)
-    $(this).css('color', 'blue')
-    $(this).text('unlock')
+    $(this).css('color', 'gray')
+    $(this).removeClass('fa-unlock-alt').addClass("fa-lock");
     locked = false;
     return locked;
   }
@@ -93,10 +93,10 @@ $('.lock').on('click',function(){
       var colour = getRandomColour();
       var $colourInput = $(event.target).closest('.line').find('.colourValueHEX');
       var $circle = $(event.target).closest('.line').find('.circle');
-      var $lockstatus = $(event.target).closest('.line').find('.lock').text();
+      var $lockstatus = $(event.target).closest('.line').find('.fa');
       console.log($lockstatus)
 
-      if($lockstatus === 'lock'){
+      if($lockstatus.hasClass("fa-unlock-alt")){
         $colourInput.val(colour);
         $circle.css({'background-color': colour});
         getTones();
@@ -104,35 +104,35 @@ $('.lock').on('click',function(){
     });
 
     //CHANGE ALL COLOURS - GET COLOURS BUTTON
-    $("#getPalette").on('click', function(event) {
+    function genPalette(){
       event.preventDefault();
       var colour1 = getRandomColour();
       var colour2 = getRandomColour();
       var colour3 = getRandomColour();
       var colour4 = getRandomColour();
-      var $lockstatus1 = $('#lock1').text();
-      var $lockstatus2 = $('#lock2').text();
-      var $lockstatus3 = $('#lock3').text();
-      var $lockstatus4 = $('#lock4').text();
+      var $lockstatus1 = $('#lock1');
+      var $lockstatus2 = $('#lock2');
+      var $lockstatus3 = $('#lock3');
+      var $lockstatus4 = $('#lock4');
 
-      if($lockstatus1 === 'lock'){
+      if($lockstatus1.hasClass("fa-unlock-alt")){
         $('#colourValueHEX1').val(colour1);
         $('#colourValueHEX1').attr('value', colour1)
         $('#circle1').css({'background-color': colour1});
       }
-       if($lockstatus2 === 'lock'){
+       if($lockstatus2.hasClass("fa-unlock-alt")){
         $('#colourValueHEX2').val(colour2);
         $('#colourValueHEX2').attr('value', colour2)
         $('#circle2').css({'background-color': colour2});
       }
 
-      if($lockstatus3 === 'lock'){
+      if($lockstatus3.hasClass("fa-unlock-alt")){
         $('#colourValueHEX3').val(colour3);
         $('#colourValueHEX3').attr('value', colour3)
         $('#circle3').css({'background-color': colour3});
       }
 
-      if($lockstatus4 === 'lock'){
+      if($lockstatus4.hasClass("fa-unlock-alt")){
         $('#colourValueHEX4').val(colour4);
         $('#colourValueHEX4').attr('value', colour4)
         $('#circle4').css({'background-color': colour4});
@@ -140,15 +140,24 @@ $('.lock').on('click',function(){
 
       //TONE
       getTones();
+    }
 
+
+    $("#getPalette").click(genPalette);
+
+    window.addEventListener('keydown', function(e) {
+      if(e.keyCode == 13 && e.target == document.body) {
+        e.preventDefault();
+        genPalette();
+      }
     });
 
   //DYNAMICALLY CHANGE COLOUR OF HEX
   $(".colourValueHEX").on("change paste keyup", function() {
-     var $lockstatus = $(this).closest('.line').find('.lock').text();
+     var $lockstatus = $(this).closest('.line').find('.fa');
      var $circle = $(this).closest('.line').find('.circle');
      var $input = document.getElementById("colourValueHEX1");
-     if($lockstatus === 'lock'){
+     if($lockstatus.hasClass("fa-unlock-alt")){
      $circle.css({'background-color': $(this).val()});
 
     //TONE

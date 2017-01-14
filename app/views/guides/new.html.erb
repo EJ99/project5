@@ -1,16 +1,24 @@
 <nav>
   <ul class="topnav" id="myTopnav">
-    <li><a href="/guides/new">Create</a></li>
-    <li><%= link_to "Logo", '#section1' %></li>
-    <li><%= link_to "Colour", '#section2' %></li>
-    <li><%= link_to "Type", '#section3' %></li>
-    <li><%= link_to "Send", '#section5' %></li>
+    <li><a id="logo" href="/guides/new"><img id="navlogo" src="/assets/navlogo.png" alt=""></a></li>
+    <li><a href="/guides/new">create</a></li>
+    <li><%= link_to "logo", '#section1' %></li>
+    <li><%= link_to "colour", '#section2' %></li>
+    <li><%= link_to "type", '#section3' %></li>
+    <li><%= link_to "deliver", '#section5' %></li>
     <li class="icon">
       <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
     </li>
   </ul>
 
 </nav>
+
+<div class="landing">
+
+  <!-- <h4 class="heading">Style Assistant</h4> -->
+  <img class="heading" src="/assets/title7.png" alt="">
+  <a class="next" href="#section1"><img class="arrow firstnext" src="/assets/arrow1.png" alt=""></a>
+</div>
 
 
 <form action="/guides" method="post" class="col 5" enctype="multipart/form-data">
@@ -21,9 +29,13 @@
   <div class="section" id="section1">
 
     <div class="center">
+      <h1>New Project</h1>
+      <p id="tip">Enter your project details. If you have a logo or project identifier, upload it here. </p>
+
       <div class="modal">
 
       <h2>New Project</h2>
+
 
         <div class="">
           <!-- <label for="">Title</label> -->
@@ -40,12 +52,12 @@
 
       </div>
 
-        <h3>Upload Logo</h3>
+        <h4>Logo</h4>
         <input class="file" name="image" type="file">
           <!-- <button id="next1" style="display:block; margin:7% auto 2%">NEXT</button> -->
       </div>
 
-      <a class="next" href="#section2"><img class="arrow" src="/assets/arrow1.png" alt=""></a>
+      <a class="next" href="#section2"><img class="arrow" src="/assets/arrow2.png" alt=""></a>
 
     </div>
 
@@ -60,19 +72,22 @@
   <div class="center1">
 
   <h1>Colour Palette</h1>
-  <button id="getPalette" style="display:block">GET PALETTE</button>
-  <p id="tip">press enter to get palette</p>
+  <p id="tip">Lock the colours you like and hit <b>enter</b> to get color combinations.</p>
+  <!-- <button id="getPalette" style="display:block">GET PALETTE</button> -->
     <div class="picker" class="col 5">
       <div class="line">
-        <div>
-          <button class="getColour">RANDOMIZE</button>
-          <!-- <button class="locked">LOCK</button> -->
+        <div class="">
+          <i class="fa fa-unlock-alt fa-2x" id="lock1" aria-hidden="true"></i>
         </div>
-        <span class="lock" id="lock1">lock</span>
-        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle1"></div>
+
         <!-- HEX Target -->
+
+        <div>
+          <button class="getColour">GET PRIMARY</button>
+        </div>
         <input name="colour1" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX1" value="">
+
         <!-- HEX Trigger -->
 
       </div>
@@ -85,15 +100,15 @@
 
     <div class="picker ">
       <div class="line">
-        <div>
-          <button class="getColour">RANDOMIZE</button>
+        <div class="">
+          <i class="fa fa-unlock-alt fa-2x" id="lock2" aria-hidden="true"></i>
         </div>
-        <span class="lock"  id="lock2">lock</span>
-        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle2"></div>
         <!-- HEX Target -->
+        <div>
+          <button class="getColour">GET SECONDARY</button>
+        </div>
         <input name="colour2" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX2" value="">
-        <!-- HEX Trigger -->
       </div>
     </div>
 
@@ -103,15 +118,17 @@
 
     <div class="picker">
       <div class="line">
-        <div>
-          <button class="getColour">RANDOMIZE</button>
+        <div class="">
+          <i class="fa fa-unlock-alt fa-2x" id="lock3" aria-hidden="true"></i>
         </div>
-        <span class="lock"  id="lock3">lock</span>
-        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle3"></div>
         <!-- HEX Target -->
+
+        <div>
+          <button class="getColour">GET COMPLEMENTARY</button>
+        </div>
         <input name="colour3" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX3" value="">
-        <!-- HEX Trigger -->
+
       </div>
     </div>
 
@@ -120,16 +137,17 @@
 
     <div class="picker">
       <div class="line">
-        <div>
-          <button class="getColour">RANDOMIZE</button>
+        <div class="">
+          <i class="fa fa-unlock-alt fa-2x" id="lock4" aria-hidden="true"></i>
         </div>
-        <span class="lock"  id="lock4">lock</span>
-        <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
         <div class="circle" id="circle4"></div>
         <!-- HEX Target -->
         <label for="colourValueHEX"></label>
+
+        <div>
+          <button class="getColour">GET COMPLEMENTARY</button>
+        </div>
         <input name="colour4" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX4" value="">
-        <!-- HEX Trigger -->
       </div>
     </div>
 
@@ -145,7 +163,6 @@
          <br style="clear: left;" />
 
          <!-- HIDDEN PARAMS -->
-
          <input type="hidden" name="tone2" value="" class="t2">
          <input type="hidden" name="tone3" value="" class="t3">
          <input type="hidden" name="tone4" value="" class="t4">
@@ -160,15 +177,12 @@
     </div>
 
   </div>
-  </div>
-
-
 
   <!-- SECTION 3 -->
   <div class="section" id="section3" id="type">
     <div class="center2">
 
-    <h2>Typography</h2>
+      <h1>Typography</h1>
 
     <div class="styled-select">
         <select id="font1" name="font1">
@@ -188,8 +202,8 @@
 
         </select>
     </div>
-      <input type="text" class="test1" name="" value="hello">
-    <h1 class="header">hello</h1>
+      <input type="text" class="test1" name="" value="your text here">
+    <h1 class="header">your text here</h1>
 
     <p class="paragraph">choose an ipsum</p>
 
@@ -251,7 +265,7 @@
       </div>
     </div>
 
- -->
+  -->
 
 
   <!-- SECTION 5 -->
@@ -260,6 +274,10 @@
   <div class="section" id="section5" id="refs">
 
     <div class="center3">
+
+    <h1>Looking good..</h1>
+    <p id="tip">Enter any relevant details your recipient will need.</p>
+
 
     <h2>Project References</h2>
     <!-- <label display:"block" for="website">Website</label> -->
