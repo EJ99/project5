@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Inconsolata|Lobster|Lora|Montserrat|Noto+Serif|Oswald|Playfair+Display|Raleway|Roboto|Slabo+27px|Space+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Bitter|Inconsolata|Lobster|Lora|Montserrat|Noto+Serif|Oswald|Playfair+Display|Raleway|Roboto|Abril+Fatface|Space+Mono|Pacifico|Chewy|Permanent+Marker|Vidaloka|Fugaz+One|Actor|PT+Sans|Droid+Sans+Mono|Arvo|Josefin+Sans|Abel" rel="stylesheet">
   <body>
 
 
@@ -15,6 +15,14 @@
 
     <script src="https://use.fontawesome.com/af946fa77f.js"></script>
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script type="text/javascript">
 
+            $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            // columnWidth: 15
+            });
+    </script>
   </body>
 </html>

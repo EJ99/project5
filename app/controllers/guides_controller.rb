@@ -31,6 +31,8 @@ class GuidesController < ApplicationController
     @guide.tone5 = ""
     @guide.tone6 = ""
     @guide.tone7 = ""
+    @guide.url2 = ""
+    @guide.url3 = ""
 
 
   end
@@ -60,6 +62,10 @@ class GuidesController < ApplicationController
     @guide.tone6 = params[:tone6]
     @guide.tone7 = params[:tone7]
     @guide.uid = SecureRandom.urlsafe_base64
+    @guide.url = params[:url]
+    @guide.logo = params[:logo]
+    @guide.url2 = params[:url2]
+    @guide.url3 = params[:url3]
 
     if @guide.save
       GuideMailer.send_guide(@guide).deliver

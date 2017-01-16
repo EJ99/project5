@@ -5,6 +5,7 @@
     <li><%= link_to "logo", '#section1' %></li>
     <li><%= link_to "colour", '#section2' %></li>
     <li><%= link_to "type", '#section3' %></li>
+    <li><%= link_to "mood", '#section4' %></li>
     <li><%= link_to "deliver", '#section5' %></li>
     <li class="icon">
       <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
@@ -16,7 +17,7 @@
 <div class="landing">
 
   <!-- <h4 class="heading">Style Assistant</h4> -->
-  <img class="heading" src="/assets/title7.png" alt="">
+  <img class="heading" src="/assets/title13.png" alt="">
   <a class="next" href="#section1"><img class="arrow firstnext" src="/assets/arrow1.png" alt=""></a>
 </div>
 
@@ -44,7 +45,7 @@
 
       <div class="">
         <!-- <label for="description">Description</label> -->
-        <input class="description" name="description" placeholder="Description" type="text">
+        <input class="description" maxlength="16" name="description" placeholder="Tagline (max 16 characters)" type="text">
       </div>
       <div class="">
         <!-- <label for="author">Author</label> -->
@@ -53,11 +54,12 @@
       </div>
 
         <h4>Logo</h4>
+        <!-- <label for="file">Upload an image</label> -->
         <input class="file" name="image" type="file">
           <!-- <button id="next1" style="display:block; margin:7% auto 2%">NEXT</button> -->
       </div>
 
-      <a class="next" href="#section2"><img class="arrow" src="/assets/arrow2.png" alt=""></a>
+      <a class="next" href="#section2"><img class="arrow" src="/assets/arrow3.png" alt=""></a>
 
     </div>
 
@@ -72,7 +74,7 @@
   <div class="center1">
 
   <h1>Colour Palette</h1>
-  <p id="tip">Lock the colours you like and hit <b>enter</b> to get color combinations.</p>
+  <p id="tip">Lock the colours you like and hit <b>shift</b> to get colour combinations. Or enter a colour code in each box.</p>
   <!-- <button id="getPalette" style="display:block">GET PALETTE</button> -->
     <div class="picker" class="col 5">
       <div class="line">
@@ -125,7 +127,7 @@
         <!-- HEX Target -->
 
         <div>
-          <button class="getColour">GET COMPLEMENTARY</button>
+          <button class="getColour">GET ACCENT</button>
         </div>
         <input name="colour3" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX3" value="">
 
@@ -145,7 +147,7 @@
         <label for="colourValueHEX"></label>
 
         <div>
-          <button class="getColour">GET COMPLEMENTARY</button>
+          <button class="getColour">GET ACCENT</button>
         </div>
         <input name="colour4" class="colourValueHEX jscolor {hash:true}" id="colourValueHEX4" value="">
       </div>
@@ -172,7 +174,7 @@
 
       </div>
 
-        <a class="next" href="#section3"><img class="arrow" src="/assets/arrow2.png" alt=""></a>
+        <a class="next" href="#section3"><img class="arrow" src="/assets/arrow3.png" alt=""></a>
 
     </div>
 
@@ -183,44 +185,53 @@
     <div class="center2">
 
       <h1>Typography</h1>
+      <p id="tip">Select a heading font</p>
+
 
     <div class="styled-select">
         <select id="font1" name="font1">
-          <<option selected="true" disabled="disabled">Header Font</option>
+          <option disabled="disabled">Header Font</option>
           <option name="Roboto" value="Roboto">Roboto</option>
           <option name="Space Mono" value="Space Mono">Space Mono</option>
-          <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
+          <option name="Abril Fatface" value="Abril Fatface">Abril Fatface</option>
           <option name="Raleway" value="Raleway">Raleway</option>
           <option name="Montserrat" value="Montserrat">Montserrat</option>
-          <option name="Lora" value="Lora">Lora</option>
+          <option name="Chewy" value="Chewy">Chewy</option>
           <option name="Bitter" value="Bitter">Bitter</option>
           <option name="Inconsolata" value="Inconsolata">Inconsolata</option>
           <option name="Anton" value="Anton">Anton</option>
-          <option name="Lobster" value="Lobster">Lobster</option>
-          <option name="Noto Serif" value="Noto Serif">Noto Serif</option>
+          <option selected="true" name="Lobster" value="Lobster">Lobster</option>
+          <option name="Pacifico" value="Pacifico">Pacifico</option>
           <option name="Playfair Display" value="Playfair Display">Playfair Display</option>
-
+          <option name="Permanent Marker" value="Permanent Marker">Permanent Marker</option>
+          <option name="Vidaloka" value="Vidaloka">Vidaloka</option>
+          <option name="Fugaz One" value="Fugaz One">Fugaz One</option>
         </select>
     </div>
-      <input type="text" class="test1" name="" value="your text here">
-    <h1 class="header">your text here</h1>
+      <input type="text" class="test1" name="" value="Your Text Here">
+    <h1 class="header">Your Text Here</h1>
 
     <p class="paragraph">choose an ipsum</p>
 
+    <p id="tip">Select a paragraph font</p>
+
       <select id="font2" name="font2">
-        <option selected="true" disabled="disabled">Paragraph Font</option>
-        <option name="Roboto" value="Roboto">Roboto</option>
+        <option disabled="disabled">Paragraph Font</option>
+        <option selected="true" name="Roboto" value="Roboto">Roboto</option>
         <option name="Space Mono" value="Space Mono">Space Mono</option>
-        <option name="Slabo 27px" value="Slabo 27px">Slabo</option>
+        <option name="PT Sans" value="PT Sans">PT Sans</option>
         <option name="Raleway" value="Raleway">Raleway</option>
-        <option name="Montserrat" value="Montserrat">Montserrat</option>
+        <option name="Arvo" value="Arvo">Arvo</option>
         <option name="Lora" value="Lora">Lora</option>
         <option name="Bitter" value="Bitter">Bitter</option>
         <option name="Inconsolata" value="Inconsolata">Inconsolata</option>
-        <option name="Anton" value="Anton">Anton</option>
+        <option name="Droid Sans Mono" value="Droid Sans Mono">Droid Sans Mono</option>
         <option name="Lobster" value="Lobster">Lobster</option>
         <option name="Noto Serif" value="Noto Serif">Noto Serif</option>
         <option name="Playfair Display" value="Playfair Display">Playfair Display</option>
+        <option name="Actor" value="Actor">Actor</option>
+        <option name="Abel" value="Abel">Abel</option>
+        <option name="Josefin Sans" value="Josefin Sans">Josefin Sans</option>
       </select>
 
       <div class="fontPreview">
@@ -230,7 +241,7 @@
         <!-- <textarea name="name" rows="8" cols="50" class="test2 "></textarea> -->
       </div>
 
-      <a class="next" href="#section5"><img class="arrow" src="/assets/arrow2.png" alt=""></a>
+      <a class="next" href="#section4"><img class="arrow" src="/assets/arrow3.png" alt=""></a>
 
     </div>
   </div>
@@ -238,34 +249,44 @@
 
   <!-- SECTION 4 -->
 
-  <!-- <div class="box">
-      Search Image
-      <p class="headings">SEARCH IMAGES</p>
+  <div class="section" id="section4">
 
-      SEARCH BOX
-      <div class="search_wrapper">
-        <input type="input" id="search_input" placeholder="Find an image.." value="">
-        <button class="search_btn">SEARCH</button>
-      </div>
+        <h1>Mood Board</h1>
+        <p id="tip">A mooboard is intended to evoke or project a particular style or concept. Search as many time as you like and choose 3 images. <br> For a more effective result, choose images that fit in with your color scheme. </p>
 
-      CAROUSEL
-      <div class="image-results your-class">
+        <!-- SEARCH BOX -->
+        <div class="search_wrapper">
+          <input type="input" id="search_input" placeholder="Eg. nature, dog, blue" value="">
+          <button class="search_btn">SEARCH</button>
+        </div>
 
-      </div>
-      <div class="space"></div>
-    </div>
+        <!-- CAROUSEL -->
+        <div class="image-results carousel"></div>
 
-    <div class="preview-wrapper">
-      <div class="preview">
-          <div class="background_img">
-            <img height="400" width="600" class="preview_img" src=""/>
-            <input type="hidden" class="preview_img_name" name="background_img" value="">
+        <div class="mood-wrapper">
+          <div class="preview preview-wrapper1">
+              <img class="size preview_img selected" src=""/>
+              <input type="hidden" class="preview_img_name" name="url" value="">
+          </div>
+
+
+          <div class="preview preview-wrapper2">
+              <img class="size preview_img2" src=""/>
+              <input type="hidden" class="preview_img_name2" name="url2" value="">
+          </div>
+
+          <div class="preview preview-wrapper3">
+              <img class="size preview_img3" src=""/>
+              <input type="hidden" class="preview_img_name3" name="url3" value="">
           </div>
         </div>
-      </div>
     </div>
 
-  -->
+
+            <div class="arrow-wrapper">
+              <a class="next" href="#section5"><img id="m-arrow" src="/assets/arrow3.png" alt=""></a>
+            </div>
+
 
 
   <!-- SECTION 5 -->
@@ -275,21 +296,21 @@
 
     <div class="center3">
 
-    <h1>Looking good..</h1>
+    <h1>Looking good!</h1>
     <p id="tip">Enter any relevant details your recipient will need.</p>
 
 
     <h2>Project References</h2>
     <!-- <label display:"block" for="website">Website</label> -->
     <div class="">
-      <input class="website" name="website" type="text" placeholder="Website">
+      <input class="website" maxlength="100" name="website" type="text" placeholder="Website">
     </div>
 
         <div class="">
-          <input class="github" name="github" type="text" placeholder="Github">
+          <input class="github" maxlength="100" name="github" type="text" placeholder="Github">
           </div>
      <div class="">
-        <input class="trello" name="trello" type="text" placeholder="Trello">
+        <input class="trello" maxlength="100" name="trello" type="text" placeholder="Trello">
       </div>
 
 
@@ -299,7 +320,7 @@
 
             <!-- <label display:"block" for="recipient_name">Recipient Name</label> -->
     <div class="">
-      <input class="recipient_name" name="recipient_name" type="text" placeholder="Recipient Name">
+      <input class="recipient_name" maxlength="40" name="recipient_name" type="text" placeholder="Recipient Name">
     </div>
       <!-- <label for="recipient_email">Recipient Email</label> -->
     <div class="">

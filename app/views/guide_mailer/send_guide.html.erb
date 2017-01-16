@@ -6,10 +6,13 @@
   <body>
     <p>
       <body>
-        <p><%= @guide.recipient_name %>, You've receive a Style Guide from <%= @guide.author %></p>
+        <p>Hi <%= @guide.recipient_name %>, </p>
+        <p> You've receive a Style Guide from <%= @guide.author %>.</p>
         <p>
-          To view just follow this <a href="http://localhost:3000/guides/<%=@guide.uid%>">link</a>
+          To view just follow this <a href="http://localhost:3000/guides/<%=@guide.uid%>">link.</a>
         </p>
+        <p>Cheers, </p>
+          <p>Style Assistant</p>
     </p>
   </body>
 </html>

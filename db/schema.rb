@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215123659) do
+ActiveRecord::Schema.define(version: 20170115090246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20161215123659) do
     t.string   "tone5"
     t.string   "tone6"
     t.string   "tone7"
+    t.string   "url2"
+    t.string   "url3"
   end
 
 end

@@ -1,6 +1,7 @@
 <nav>
   <ul class="topnav" id="myTopnav">
-    <li><a href="/guides/new">Create A Guide</a></li>
+    <li><a id="logo" href="/guides/new"><img id="navlogo" src="/assets/navlogo.png" alt=""></a></li>
+    <li><a href="/guides/new">Create Your Own</a></li>
   </ul>
 
 </nav>
@@ -15,72 +16,90 @@
         <h1 style="font-family: '<%= @guide.font1 =%>'" ><%= @guide.title %></h1>
         <p id="first">STYLEGUIDE</p>
       </div>
-      <img id="logo" src="<%= @guide.image.url %>" alt="logo">
+      <img id="logo2" src="<%= @guide.image.url %>" alt="logo">
       <div class="blurb">
         <p><span style="font-weight:bold" class="gray"></span><em><%= @guide.description %></em></p>
         <p><span style="font-weight:bold" class="gray">AUTHOR:</span> <%= @guide.author %></p>
-        <p><span style="font-weight:bold" class="gray">WEBSITE:</span><%= @guide.website %></p>
+        <p><span style="font-weight:bold" class="gray">WEBSITE: </span><%= @guide.website %></p>
         <p><span style="font-weight:bold" class="gray">GITHUB:</span> <%= @guide.github %></p>
         <p><span style="font-weight:bold" class="gray">TRELLO:</span> <%= @guide.trello %></p>
       </div>
     </div>
 
     <p class="headings">COLOUR PALETTE</p>
+    <p>Click the icon to copy the hex value.</p>
     <div class="colourShow" >
-      <div id="cc1" style="background-color:<%= @guide.colour1 %>; font-family: '<%= @guide.font2 =%>';" class="circleShow grow"><%= @guide.colour1 %>
+      <div id="cc1" style="background-color:<%= @guide.colour1 %>; font-family: '<%= @guide.font2 =%>';" class="circleShow grow"> <span class="hexc"> <%= @guide.colour1 %></span>
         <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc1"></button>
       </div>
 
-      <div  id="cc2" style="background-color:<%= @guide.colour2 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour2 %>
+      <div  id="cc2" style="background-color:<%= @guide.colour2 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"> <span class="hexc"><%= @guide.colour2 %></span>
         <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc2"></button>
       </div>
-      <div id="cc3" style="background-color:<%= @guide.colour3 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour3 %>
+      <div id="cc3" style="background-color:<%= @guide.colour3 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><span class="hexc"> <%= @guide.colour3 %></span>
         <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc3"></button>
       </div>
-      <div id="cc4" style="background-color:<%= @guide.colour4 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><%= @guide.colour4 %>
+      <div id="cc4" style="background-color:<%= @guide.colour4 %>; font-family: '<%= @guide.font2 =%>'" class="circleShow grow"><span class="hexc"> <%= @guide.colour4 %></span>
         <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#cc4"></button>
       </div>
-      <div id="colourBlurb" style="font-family: 'helvetica'"><p><span style="color: <%= @guide.colour1 %> "><%= @guide.colour1 %></span> is <%= @guide.title %>'s main colour. If the thing you’re making has colour, this colour should be in it.</p>
-        <p><span style="color: <%= @guide.colour2 %>"><%= @guide.colour2 %></span> is the secondary colour - it may be a good choice for elements that need to stand out. </p>
-        <p><span style="color: <%= @guide.colour3 %> "><%= @guide.colour3 %> </span>and <span style="color: <%= @guide.colour4 %> "><%= @guide.colour4 %></span> are tertiary accent colours that should mostly be used in small doses and only once the primary colours have been used.</p></div>
     </div>
-
+    <div id="colourBlurb" style="font-family: 'helvetica'"><p><span style="color: <%= @guide.colour1 %>"><%= @guide.colour1 %></span> is <%= @guide.title %>'s main colour. If the thing you’re making has colour, this colour should be in it. <span style="color: <%= @guide.colour2 %>"><%= @guide.colour2 %></span> is a secondary colour - it may be a good choice for elements that need to stand out. </p>
+      <p><span style="color: <%= @guide.colour3 %> "><%= @guide.colour3 %> </span>and <span style="color: <%= @guide.colour4 %> "><%= @guide.colour4 %></span> are tertiary accent colours that should mostly be used in small doses and only once the primary colours have been used.</p></div>
 
     <div class="tonesShow">
       <p class="headings">PRIMARY HUES</p>
-      <div style="background-color:<%= @guide.tone2 %>;" class="tshow"></div>
-      <div style="background-color:<%= @guide.tone3 %>;" class="tshow"></div>
-      <div style="background-color:<%= @guide.tone4 %>;" class="tshow"></div>
-      <div style="background-color:<%= @guide.tone5 %>;" class="tshow"></div>
-      <div style="background-color:<%= @guide.tone6 %>;" class="tshow"></div>
-      <div style="background-color:<%= @guide.tone7 %>;" class="tshow"></div>
+      <div style="background-color:<%= @guide.tone2 %>;" class="tshow grow"></div>
+      <div style="background-color:<%= @guide.tone3 %>;" class="tshow grow"></div>
+      <div style="background-color:<%= @guide.tone4 %>;" class="tshow grow"></div>
+      <div style="background-color:<%= @guide.tone5 %>;" class="tshow grow"></div>
+      <div style="background-color:<%= @guide.tone6 %>;" class="tshow grow"></div>
+      <div style="background-color:<%= @guide.tone7 %>;" class="tshow grow"></div>
     </div>
 
-    <p class="headings">TYPOGRAPHY</p>
+
+    <p class="headings">MOODBOARD</p>
+    <div class="moods-container">
+      <p class="mood-text">These images, words and colours aim to convey the essence of the brand.<br><br> The images are sourced from the Pixabay API and are copyright free. So feel free to copy the image address and paste them straight into your project. </p>
+      <div class="moods-show" >
+        <img class="mood" id="mood1" src="<%= @guide.url %>" alt="">
+        <div class="mood" id="m1" style="background-color:<%= @guide.colour1 %>"><p class="mood-tag" style="font-family: '<%= @guide.font1 =%>'";><%= @guide.description %></p></div>
+        <img class="mood" id="mood2" src="<%= @guide.url2 %>" alt="">
+        <div class="mood" id="m2" style="background-color:<%= @guide.colour2 %>"></div>
+        <img class="mood" id="mood3" src="<%= @guide.url3 %>" alt="">
+      </div>
+    </div>
+
+    <p class="headings4">TYPOGRAPHY</p>
     <div class="fontShow" >
-      <h1 style="color:<%= @guide.tone5 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h1>
-      <h2 style="color:<%= @guide.tone4 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h2>
-      <h3 style="color:<%= @guide.tone3 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h3>
-      <h4 style="color:<%= @guide.tone2 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h4>
+      <p class="headings2">HEADING TEXT</p>
+      <p id="font" style="color:<%= @guide.tone6 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h1> <span>88px</span>
+      <p id="font1a" style="color:<%= @guide.tone5 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h1> <span>72px</span>
+      <p id="font2a" style="color:<%= @guide.tone4 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%> </h2> <span>48px</span>
+      <p id="font3" style="color:<%= @guide.tone3 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h3> <span>24px</span>
+      <p id="font4" style="color:<%= @guide.tone2 %>; font-family: '<%= @guide.font1 =%>';"><%= @guide.font1 =%></h4> <span>15px</span>
     </div>
 
 
     <div class="paraShow">
-      <p class="headings">PARAGRAPH TEXT</p>
-      <p style="font-family: '<%= @guide.font2 =%>';">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+      <p class="headings3">PARAGRAPH TEXT</p>
+      <span style="font-family: '<%= @guide.font2 =%>';">Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</span>
     </div>
 
     <div class="codeSnippet">
       <p class="headings code">CODE</p>
-      <p>To embed your selected fonts into a webpage, copy this code into the head of your HTML document:</p>
-      <xmp><link href="https://fonts.googleapis.com/css?family="<%= @guide.font1 =%>|<%= @guide.font2 =%>" rel="stylesheet"></xmp>
-      <p>Then use the following CSS rules to specify these families:</p>
-      <span class="text">Heading Text: </span><xmp>font-family: '<%= @guide.font1 =%>';</xmp>
-      <span class="text">Paragraph Text: </span><xmp>font-family: '<%= @guide.font2 =%>';</xmp>
-
-
-
+      <div class="code-p">
+        <p>To embed your selected fonts into a webpage, copy this into the head of your HTML document:</p>
+        <xmp><link href="https://fonts.googleapis.com/css?family="<%= @guide.font1 =%>|<%= @guide.font2 =%>" rel="stylesheet"></xmp>
+        <p>Then use the following CSS rules to specify these families:</p>
+        <span class="text">Heading Text: </span><xmp>font-family: '<%= @guide.font1 =%>';</xmp><br>
+        <span class="text">Paragraph Text: </span><xmp>font-family: '<%= @guide.font2 =%>';</xmp>
+      </div>
     </div>
+
+    <div id="footer">
+      <img src="/assets/navlogo.png" alt="" id=>
+    </div>
+
 
   </div>
 
